@@ -1,5 +1,8 @@
 package ProyectoTQS;
 
+import java.io.IOException;
+import java.util.Scanner;
+
 public class Player {
 	private String m_name;
 	private int m_numBoats;
@@ -17,8 +20,14 @@ public class Player {
 		return this.m_numBoats;
 	}
 	
-	public void play() {
-		
+	// Habria que testearlo de alguna forma
+	public int[] play() throws IOException {
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter the row: ");
+		int row = in.nextInt();
+		System.out.println("Enter the column: ");
+		int col = in.nextInt();
+		return new int[] {row, col};
 	}
 	
 }
