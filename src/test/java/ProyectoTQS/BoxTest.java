@@ -7,8 +7,9 @@ import org.junit.Test;
 public class BoxTest {
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void Boxtest() {
+		Box box = new Box();
+		assertFalse(box.getState());
 	}
 
 }

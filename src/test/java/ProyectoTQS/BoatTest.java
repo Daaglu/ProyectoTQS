@@ -7,7 +7,7 @@ import org.junit.Test;
 public class BoatTest {
 
 	@Test
-	public void test() {
+	public void testBox() {
 		fail("Not yet implemented");
 	}
 
