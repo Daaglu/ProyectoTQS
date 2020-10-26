@@ -23,5 +23,15 @@ public class BoatTest {
 		boat.changeState(2);
 		assertEquals(boat.getState(), 2);
 	}
+	
+	@Test // This test checks if the boat deads correctly
+	public void checkDeadTest() {
+		Boat boat = new Boat(3,1);
+		boat.checkDead();
+		assertTrue(boat.getAlive());
+		boat.changeState(3);
+		boat.checkDead();
+		assertFalse(boat.getAlive());
+	}
 
 }

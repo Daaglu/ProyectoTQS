@@ -38,8 +38,19 @@ public class Boat {
 		return this.m_boxArray;
 	}
 	
-	// This methos changes the state of the boat
+	// This method changes the state of the boat
 	public void changeState(int state) {
 		this.m_state = state;
+	}
+	
+	// This method checks if the boat is dead by checking the state of the boat
+	public boolean checkDead() {
+		if(this.m_state == 3) {
+			this.m_alive = false;
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 }
