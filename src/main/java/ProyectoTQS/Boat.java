@@ -5,7 +5,7 @@ public class Boat {
 	private int m_size;
 	private int m_orientation; // 0 up-down // 1 left-right
 	private boolean m_alive; // true alive // false dead
-	private Box[] m_boxArray;
+	private boolean[] m_boxArray;
 	private int m_state; // 0 normal // 1 touched // 2 dead 
 	
 	// Construcor
@@ -13,8 +13,8 @@ public class Boat {
 		this.m_size = size;
 		this.m_orientation = orientation;
 		this.m_alive = true;
-		this.m_state = 0; 
-		this.m_boxArray = new Box[this.m_size];
+		this.m_state = 0;
+		this.m_boxArray = new boolean[this.m_size];
 	}
 	
 	// Getters
@@ -34,7 +34,7 @@ public class Boat {
 		return this.m_state;
 	}
 	
-	public Box[] getArray() {
+	public boolean[] getArray() {
 		return this.m_boxArray;
 	}
 	
