@@ -30,7 +30,7 @@ public class BoatTest {
 		boolean res_0 = boat.checkDead();
 		assertFalse(res_0);
 		assertTrue(boat.getAlive());
-		boat.changeState(3);
+		boat.changeState(2);
 		boolean res_1 = boat.checkDead();
 		assertTrue(res_1);
 		assertFalse(boat.getAlive());

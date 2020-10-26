@@ -45,7 +45,7 @@ public class Boat {
 	
 	// This method checks if the boat is dead by checking the state of the boat
 	public boolean checkDead() {
-		if(this.m_state == 3) {
+		if(this.m_state == 2) {
 			this.m_alive = false;
 			return true;
 		}
