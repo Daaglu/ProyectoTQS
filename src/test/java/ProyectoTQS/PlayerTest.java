@@ -19,7 +19,7 @@ public class PlayerTest {
 	public void setBoatsTest() {
 		Player p1 = new Player("Player 1");
 		p1.setNumBoats(8);
-		assertEquals(p1.getNumBoats(), 9);
+		assertEquals(p1.getNumBoats(), 8);
 	}
 	
 	//@Test // This tests the move of a player, but is commented because the player has to enter data.
