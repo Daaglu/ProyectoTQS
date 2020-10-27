@@ -11,7 +11,7 @@ public class Player {
 	// constructor
 	public Player(String name) {
 		this.m_name = name;
-		this.m_numBoats = 10;
+		this.m_numBoats = 9;
 	}
 	
 	// Getters

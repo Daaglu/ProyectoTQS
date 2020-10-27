@@ -2,7 +2,7 @@ package ProyectoTQS;
 
 // This class represents a single boat, the size and orientation is passed in the constructor.
 public class Boat {
-	private int m_size;
+	private int m_size;// 1-4 // 3-3 // 3-2 // 1-1
 	private int m_orientation; // 0 right // 1 down // 2 left // 3 up
 	private boolean m_alive; // true alive // false dead
 	private boolean[] m_boxArray;
@@ -10,7 +10,7 @@ public class Boat {
 	
 	// Construcor
 	public Boat(int size, int orientation) {
-		if(size < 2 || size > 4) {
+		if(size < 1 || size > 4) {
 			
 		}
 		this.m_size = size;

@@ -8,9 +8,9 @@ public class Board {
 	// Constructor
 	public Board() {
 		this.m_numBoxes = 64;
-		this.m_matrixBoxes = new Box[8][8];
-		for(int i=0; i<8;i++) {
-			for(int j=0; j<8;j++) {
+		this.m_matrixBoxes = new Box[10][10];
+		for(int i=0; i<10;i++) {
+			for(int j=0; j<10;j++) {
 				this.m_matrixBoxes[i][j] = new Box();
 			}
 		}

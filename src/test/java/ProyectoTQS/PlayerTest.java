@@ -12,14 +12,14 @@ public class PlayerTest {
 	public void PlayerTest() {
 		Player p1 = new Player("Player 1");
 		assertEquals(p1.getName(), "Player 1");
-		assertEquals(p1.getNumBoats(), 10);
+		assertEquals(p1.getNumBoats(), 9);
 	}
 	
 	@Test // Tests the setter by checking the new number of boats.
 	public void setBoatsTest() {
 		Player p1 = new Player("Player 1");
 		p1.setNumBoats(8);
-		assertEquals(p1.getNumBoats(), 8);
+		assertEquals(p1.getNumBoats(), 9);
 	}
 	
 	//@Test // This tests the move of a player, but is commented because the player has to enter data.
