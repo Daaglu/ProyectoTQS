@@ -9,13 +9,10 @@ public class Board {
 	public Board() {
 		this.m_numBoxes = 64;
 		this.m_matrixBoxes = new Box[8][8];
-<<<<<<< HEAD
 		for (int i = 0; i < 8; i++) {
 			for (int j = 0; j < 8; j++) {
-=======
 		for(int i=0; i<8;i++) {
 			for(int j=0; j<8;j++) {
->>>>>>> 662a5fdc1e3b9140a74b2a43c177f4332637a602
 				this.m_matrixBoxes[i][j] = new Box();
 			}
 		}
