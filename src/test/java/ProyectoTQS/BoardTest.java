@@ -35,6 +35,8 @@ public class BoardTest {
 		Board board = new Board();
 		int pos = 0;
 		int dir = 0;
+		int size = 1;
+		board.setBoat(dir, pos, size);
+		assertEquals(board.getBox(0, 0).);
 	}
-
 }
