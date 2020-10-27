@@ -9,13 +9,13 @@ public class GameTest {
 	@Test // Tests the constructor
 	public void gametest() {
 		Game game = new Game();
+		Board board = new Board();
 		assertEquals(game.getPlayer1().getName(), "Player 1");
 		assertEquals(game.getPlayer2().getName(), "Player 2");
-		assertEquals(game.getPlayer1().getNumBoats(), 10);
-		assertEquals(game.getPlayer2().getNumBoats(), 10);
+		assertEquals(game.getPlayer1().getNumBoats(), 9);
+		assertEquals(game.getPlayer2().getNumBoats(), 9);
 		assertEquals(game.getTurn(), 0);
-		assertEquals(game.getBoard().getNumBoxes(), 64);
-		assertArrayEquals(game.getBoard().getMatrix(), new Box[8][8]);
+		assertEquals(game.getBoard().getNumBoxes(), 100);
 	}
 	
 	@Test // This checks if a player wins by modifying the number of boats of each player.
