@@ -19,5 +19,13 @@ public class BoxTest {
 		assertTrue(box.getState());
 	}
 	
+	@Test
+	public void setBoatTest() {
+		Box box = new Box();
+		Boat boat = new Boat(2,1);
+		box.setBoat(boat);
+		assertEquals(box.getBoat(),boat);
+	}
+	
 	
 }
