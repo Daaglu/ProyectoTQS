@@ -29,5 +29,12 @@ public class BoardTest {
 		assertTrue(board.attack(x,y));
 		assertFalse(board.attack(x, y)); //attack again and test if this could be possible
 	}
+	
+	@Test
+	public void setBoatsTest() {
+		Board board = new Board();
+		int pos = 0;
+		int dir = 0;
+	}
 
 }
