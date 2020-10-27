@@ -2,6 +2,7 @@ package ProyectoTQS;
 
 public class Box {
 	private boolean m_state;
+	
 	public Box() {
 		this.m_state = false;
 	}

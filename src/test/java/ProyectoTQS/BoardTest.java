@@ -17,7 +17,7 @@ public class BoardTest {
 	public void getBoxTest() {
 		Board board = new Board();
 		Box box = new Box();
-		assertEquals(board.getBox(0, 0), box);
+		assertFalse(board.getBox(0, 0).getState());
 	}
 	
 	@Test // Test the attack method
