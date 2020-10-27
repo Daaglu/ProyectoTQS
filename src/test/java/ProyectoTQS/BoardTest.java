@@ -20,7 +20,7 @@ public class BoardTest {
 		assertFalse(board.getBox(0, 0).getState());
 	}
 	
-	@Test // Test the attack method
+	/*@Test // Test the attack method
 	public void attackTest() {
 		Board board = new Board();
 		int x = 0;
@@ -28,15 +28,15 @@ public class BoardTest {
 		board.attack(x,y);
 		assertTrue(board.attack(x,y));
 		assertFalse(board.attack(x, y)); //attack again and test if this could be possible
-	}
+	}*/
 	
 	@Test
 	public void setBoatsTest() {
 		Board board = new Board();
-		int pos = 0;
-		int dir = 0;
-		int size = 1;
-		board.setBoat(dir, pos, size);
-		assertEquals(board.getBox(0, 0).);
+		Boat boat = new Boat(1,0);
+		int x = 0;
+		int y = 0;
+		board.setBoat(boat, x, y);
+		assertTrue(board.getBox(0, 0).getState());
 	}
 }

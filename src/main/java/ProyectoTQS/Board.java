@@ -28,13 +28,77 @@ public class Board {
 		return this.m_matrixBoxes;
 	}
 	
-	public boolean attack(int x, int y) {
+	/*public boolean attack(int x, int y) {
 		if(!this.getBox(x, y).getState()) {
 			this.getBox(x,y).changeState(true);
 			return true;
 		}
 		else
 			return false;
+	}*/
+	
+	private boolean checkAndSet(int x, int y, int size, int orientation, Boat boat) {
+		switch(orientation) {
+		case 0://right
+			if((9-x) + 1 < size) {
+				return false;
+			}else {
+				for(int i = 0; i<size;i++) {
+					this.m_matrixBoxes[i][y].setBoat(boat);
+				}
+			}
+			break;
+		case 1://down
+			if((9-y) + 1 < size) {
+				return false;
+			}else {
+				for(int i = 0; i<size;i++) {
+					this.m_matrixBoxes[x][i].setBoat(boat);
+				}
+			}
+			break;
+		case 2://left
+			if((0+x) + 1 < size) {
+				return false;
+			}else {
+				for(int i = size; i < 0; i--) {
+					this.m_matrixBoxes[i][y].setBoat(boat);
+				}
+			}
+			break;
+		case 3://up
+			if((0+y) + 1 < size) {
+				return false;
+			}else {
+				for(int i = size; i < 0; i--) {
+					this.m_matrixBoxes[x][i].setBoat(boat);
+				}
+			}
+			break;
+		default:return false;
+		}
+		return true;
+	}
+	
+	public boolean setBoat(Boat boat, int x, int y) {
+		if (x < 0 || x > 9 || y < 0 || y > 9) {
+			return false;
+		}
+		else {
+			if (this.getBox(x, y).getState()) {
+				return false;
+			}
+			else {
+				if(boat.getSize()==1) {
+					this.getBox(x, y).setBoat(boat);
+					return true;
+				}
+				else {
+					return this.checkAndSet(x,y,boat.getSize(),boat.getOrientation(), boat);	
+				}
+			}
+		}
+		
 	}
 	
 }
