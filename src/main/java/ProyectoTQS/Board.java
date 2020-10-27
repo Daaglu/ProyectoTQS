@@ -15,9 +15,21 @@ public class Board {
 	public int getNumBoxes() {
 		return this.m_numBoxes;
 	}
+	public Box getBox(int x, int y) {
+		return this.m_matrixBoxes[x][y];
+	}
 	
 	public Box[][] getMatrix() {
 		return this.m_matrixBoxes;
+	}
+	
+	public boolean attack(int x, int y) {
+		if(!this.getBox(x, y).getState()) {
+			this.getBox(x,y).changeState(true);
+			return true;
+		}
+		else
+			return false;
 	}
 	
 }

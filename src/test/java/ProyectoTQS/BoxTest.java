@@ -18,4 +18,6 @@ public class BoxTest {
 		box.changeState(true);
 		assertTrue(box.getState());
 	}
+	
+	
 }
