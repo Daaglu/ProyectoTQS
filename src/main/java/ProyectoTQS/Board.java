@@ -7,7 +7,7 @@ public class Board {
 	
 	// Constructor
 	public Board() {
-		this.m_numBoxes = 64;
+		this.m_numBoxes = 100;
 		this.m_matrixBoxes = new Box[10][10];
 		for(int i=0; i<10;i++) {
 			for(int j=0; j<10;j++) {
@@ -37,7 +37,9 @@ public class Board {
 			return false;
 	}*/
 	
-	private boolean checkAndSet(int x, int y, int size, int orientation, Boat boat) {
+	public boolean checkAndSet(int x, int y, Boat boat) {
+		int size = boat.getSize();
+		int orientation = boat.getOrientation();
 		switch(orientation) {
 		case 0://right
 			if((9-x) + 1 < size) {
@@ -61,7 +63,7 @@ public class Board {
 			if((0+x) + 1 < size) {
 				return false;
 			}else {
-				for(int i = size; i < 0; i--) {
+				for(int i = size; i > 0; i--) {
 					this.m_matrixBoxes[i][y].setBoat(boat);
 				}
 			}
@@ -70,7 +72,7 @@ public class Board {
 			if((0+y) + 1 < size) {
 				return false;
 			}else {
-				for(int i = size; i < 0; i--) {
+				for(int i = size; i > 0; i--) {
 					this.m_matrixBoxes[x][i].setBoat(boat);
 				}
 			}
@@ -94,7 +96,7 @@ public class Board {
 					return true;
 				}
 				else {
-					return this.checkAndSet(x,y,boat.getSize(),boat.getOrientation(), boat);	
+					return this.checkAndSet(x,y, boat);	
 				}
 			}
 		}

@@ -10,9 +10,6 @@ public class Boat {
 	
 	// Construcor
 	public Boat(int size, int orientation) {
-		if(size < 1 || size > 4) {
-			
-		}
 		this.m_size = size;
 		this.m_orientation = orientation;
 		this.m_alive = true;
