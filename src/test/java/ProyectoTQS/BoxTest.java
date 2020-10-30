@@ -12,7 +12,7 @@ public class BoxTest {
 		assertFalse(box.getState());
 	}
 	
-	/*@Test // Tests  if the methos changes the state correctly
+	/*@Test // Tests if the method changes the state correctly
 	public void ChangeStateTest() {
 		Box box = new Box();
 		box.changeState(true);
@@ -26,6 +26,4 @@ public class BoxTest {
 		box.setBoat(boat);
 		assertEquals(box.getBoat(),boat);
 	}
-	
-	
 }

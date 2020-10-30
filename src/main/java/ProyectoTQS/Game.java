@@ -2,6 +2,13 @@ package ProyectoTQS;
 
 // This class implements a Game. It has two players, the turn to know which player has to play and a board.
 public class Game {
+	// Constant values
+	static final int M_NUM4 = 1;
+	static final int M_NUM3 = 3;
+	static final int M_NUM2 = 3;
+	static final int M_NUM1 = 2;
+	
+	// Private attributes
 	private Player m_p1;
 	private Player m_p2;
 	private int m_turn;

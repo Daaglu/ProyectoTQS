@@ -8,10 +8,10 @@ public class Boat {
 	private boolean[] m_boxArray;
 	private int m_state; // 0 normal // 1 touched // 2 dead 
 	
-	// Construcor
-	public Boat(int size, int orientation) {
+	// Constructor
+	Boat(int size, int orientation) {
 		this.m_size = size;
-		this.m_orientation = orientation;
+		this.m_orientation = orientation; // Ask in Game
 		this.m_alive = true;
 		this.m_state = 0;
 		this.m_boxArray = new boolean[this.m_size];

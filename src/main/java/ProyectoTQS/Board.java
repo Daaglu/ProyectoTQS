@@ -37,6 +37,7 @@ public class Board {
 			return false;
 	}*/
 	
+	// This method checks if there's enough space and puts the boat
 	public boolean checkAndSet(int x, int y, Boat boat) {
 		int size = boat.getSize();
 		int orientation = boat.getOrientation();
@@ -82,6 +83,7 @@ public class Board {
 		return true;
 	}
 	
+	// This method puts a boat
 	public boolean setBoat(Boat boat, int x, int y) {
 		if (x < 0 || x > 9 || y < 0 || y > 9) {
 			return false;

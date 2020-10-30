@@ -1,7 +1,7 @@
 package ProyectoTQS;
 
 public class Box {
-	private boolean m_state;
+	private boolean m_state; // false = water // true = boat
 	private Boat m_boat;
 	public Box() {
 		this.m_state = false;
