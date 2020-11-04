@@ -41,10 +41,12 @@ public class Board {
 	public boolean checkAndSet(int x, int y, Boat boat) {
 		int size = boat.getSize();
 		int orientation = boat.getOrientation();
+		boolean set = true;
+		
 		switch(orientation) {
 		case 0://right
 			if((9-x) + 1 < size) {
-				return false;
+				set = false;
 			}else {
 				for(int i = 0; i<size;i++) {
 					this.m_matrixBoxes[i][y].setBoat(boat);
@@ -53,7 +55,7 @@ public class Board {
 			break;
 		case 1://down
 			if((9-y) + 1 < size) {
-				return false;
+				set = false;
 			}else {
 				for(int i = 0; i<size;i++) {
 					this.m_matrixBoxes[x][i].setBoat(boat);
@@ -62,7 +64,7 @@ public class Board {
 			break;
 		case 2://left
 			if((0+x) + 1 < size) {
-				return false;
+				set = false;
 			}else {
 				for(int i = size; i > 0; i--) {
 					this.m_matrixBoxes[i][y].setBoat(boat);
@@ -71,7 +73,7 @@ public class Board {
 			break;
 		case 3://up
 			if((0+y) + 1 < size) {
-				return false;
+				set = false;
 			}else {
 				for(int i = size; i > 0; i--) {
 					this.m_matrixBoxes[x][i].setBoat(boat);
@@ -80,7 +82,12 @@ public class Board {
 			break;
 		default:return false;
 		}
-		return true;
+		
+		if (set == true) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	// This method puts a boat
