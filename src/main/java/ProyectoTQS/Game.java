@@ -61,4 +61,8 @@ public class Game {
 			}
 		}
 	}
+	
+	public void changeTurn() {
+		this.m_turn = (this.m_turn + 1) % 2;
+	}
 }
