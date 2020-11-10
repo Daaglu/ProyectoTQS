@@ -18,7 +18,7 @@ public class Game {
 	public Game() {
 		this.m_p1 = new Player("Player 1");
 		this.m_p2 = new Player("Player 2");
-		this.m_turn = 0;
+		this.m_turn = 0; //Player 1: 0 Player 2: 1
 		this.m_board = new Board();
 	}
 	

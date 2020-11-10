@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class GameTest {
 
-	@Test // Tests the constructor
+	//@Test // Tests the constructor
 	public void gametest() {
 		Game game = new Game();
 		Board board = new Board();
@@ -18,7 +18,7 @@ public class GameTest {
 		assertEquals(game.getBoard().getNumBoxes(), 100);
 	}
 	
-	@Test // This checks if a player wins by modifying the number of boats of each player.
+	//@Test // This checks if a player wins by modifying the number of boats of each player.
 	public void checkWinTest() {
 		Game game = new Game();
 		assertEquals(game.checkWin(), 0);
@@ -28,5 +28,13 @@ public class GameTest {
 		game.getPlayer2().setNumBoats(0);
 		assertEquals(game.checkWin(), 1);
 	}
-
+	
+	@Test
+	public void changeTrun() {
+		Game game = new Game();
+		game.changeTurn();
+		assertEquals(game.getTurn(), 1);
+		game.changeTurn();
+		assertEquals(game.getTurn(), 0);
+	}
 }

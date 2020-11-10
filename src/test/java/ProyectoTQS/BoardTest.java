@@ -56,7 +56,7 @@ public class BoardTest {
 		assertTrue(res_8);	
 	}
 	
-	@Test // This test if we can put a boat in a certain position and puts it. //Passed
+	//@Test // This tests if we can put a boat in a certain position and puts it. //Passed
 	public void checkAndSet() {
 		Board board = new Board();
 		Boat boat1 = new Boat(2,0);

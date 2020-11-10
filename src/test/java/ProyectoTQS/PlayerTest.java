@@ -22,7 +22,7 @@ public class PlayerTest {
 		assertEquals(p1.getNumBoats(), 8);
 	}
 	
-	//@Test // This tests the move of a player, but is commented because the player has to enter data.
+	@Test // This tests the move of a player, but is commented because the player has to enter data.
 	public void playTest() throws IOException {
 		Player p1 = new Player("Player 1");
 		assertArrayEquals(p1.play(), new int[] {2,2});
