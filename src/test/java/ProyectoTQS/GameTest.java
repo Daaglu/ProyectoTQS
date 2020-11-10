@@ -29,12 +29,16 @@ public class GameTest {
 		assertEquals(game.checkWin(), 1);
 	}
 	
-	@Test
+	//@Test
 	public void changeTrun() {
 		Game game = new Game();
 		game.changeTurn();
 		assertEquals(game.getTurn(), 1);
 		game.changeTurn();
 		assertEquals(game.getTurn(), 0);
+	}
+	
+	void setBoats(Boat b, int row, int col) {
+		
 	}
 }

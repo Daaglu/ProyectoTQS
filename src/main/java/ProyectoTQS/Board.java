@@ -19,7 +19,7 @@ public class Board {
 	// Getters
 	public int getNumBoxes() {
 		return this.m_numBoxes;
-	}
+	} 
 	public Box getBox(int x, int y) {
 		return this.m_matrixBoxes[x][y];
 	}
