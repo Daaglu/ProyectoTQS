@@ -1,11 +1,14 @@
 package ProyectoTQS;
 
+import java.util.LinkedList;
+import java.util.List;
+
 // This class represents a single boat, the size and orientation is passed in the constructor.
 public class Boat {
 	private int m_size;// 1-4 // 3-3 // 3-2 // 1-1
 	private int m_orientation; // 0 right // 1 down // 2 left // 3 up
 	private boolean m_alive; // true alive // false dead
-	private Box[] m_boxArray;
+	private List<Box> m_listBoxes;
 	private int m_state; // 0 normal // 1 touched // 2 dead 
 	
 	// Constructor
@@ -14,7 +17,7 @@ public class Boat {
 		this.m_orientation = orientation; // Ask in Game
 		this.m_alive = true;
 		this.m_state = 0;
-		this.m_boxArray = new Box[this.m_size];
+		this.m_listBoxes = new LinkedList<Box>();
 	}
 	
 	// Getters
@@ -34,8 +37,12 @@ public class Boat {
 		return this.m_state;
 	}
 	
-	public Box[] getArray() {
-		return this.m_boxArray;
+	public List<Box> getList() {
+		return this.m_listBoxes;
+	}
+	
+	public void setPositionBox(Box b) {
+		this.m_listBoxes.add(b);
 	}
 	
 	// This method changes the state of the boat

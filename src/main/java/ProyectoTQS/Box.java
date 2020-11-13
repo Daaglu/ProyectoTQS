@@ -27,9 +27,11 @@ public class Box {
 		this.m_attacked = true;
 	}
 	
+	// This method links the box with the boat in both ways
 	public void setBoat(Boat boat) {
 		this.m_boat = boat;
 		this.m_state = true;
+		boat.setPositionBox(this);
 	}
 
 }

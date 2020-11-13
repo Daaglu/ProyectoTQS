@@ -2,6 +2,8 @@ package ProyectoTQS;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.Test;
 
 public class BoxTest {
@@ -18,6 +20,8 @@ public class BoxTest {
 		Boat boat = new Boat(2,1);
 		box.setBoat(boat);
 		assertEquals(box.getBoat(),boat);
+		List<Box> blist = boat.getList();
+		assertEquals(blist.get(0), box);
 	}
 	
 	@Test

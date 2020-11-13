@@ -8,14 +8,14 @@ import org.junit.Test;
 
 public class PlayerTest {
 
-	//@Test // This tests the Constructor.
+	@Test // This tests the Constructor.
 	public void PlayerTest() {
 		Player p1 = new Player("Player 1");
 		assertEquals(p1.getName(), "Player 1");
 		assertEquals(p1.getNumBoats(), 9);
 	}
 	
-	//@Test // Tests the setter by checking the new number of boats.
+	@Test // Tests the setter by checking the new number of boats.
 	public void setBoatsTest() {
 		Player p1 = new Player("Player 1");
 		p1.setNumBoats(8);
@@ -28,10 +28,9 @@ public class PlayerTest {
 		assertArrayEquals(p1.play(), new int[] {2,2});
 	}
 	
-	//@Test
+	@Test
 	public void putBoatsTest() {
 		Player p1 = new Player("Player 1");
-		p1.putBoats();
 	}
 
 }
