@@ -18,9 +18,11 @@ public class Game {
 	// Constructor
 	public Game() {
 		this.m_p1 = new Player("Player 1");
-		// Create the boats for player 1
+		// Create all the boats for p1
+		this.m_p1.createBoats();
 		this.m_p2 = new Player("Player 2");
-		// Create the boats for player 2
+		// Create all the boats for p2
+		this.m_p2.createBoats();
 		this.m_turn = 0; //Player 1: 0 //Player 2: 1
 		this.m_board1 = new Board();
 		this.m_board2 = new Board();

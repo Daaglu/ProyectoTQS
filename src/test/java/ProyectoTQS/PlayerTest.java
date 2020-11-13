@@ -28,6 +28,7 @@ public class PlayerTest {
 		assertArrayEquals(p1.play(), new int[] {2,2});
 	}
 	
+	@Test
 	public void createBoatsTest() {
 		Player p1 = new Player("Player 1");
 		p1.createBoats();
@@ -42,6 +43,7 @@ public class PlayerTest {
 		assertEquals(p1.getBoatList().get(7).getSize(), 3);
 		assertEquals(p1.getBoatList().get(8).getSize(), 3);
 		assertEquals(p1.getBoatList().get(9).getSize(), 4);
+		assertEquals(p1.getBoatList().get(5).getOrientation(), -1);
 	}
 
 }
