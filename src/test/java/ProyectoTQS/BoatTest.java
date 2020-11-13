@@ -9,7 +9,7 @@ public class BoatTest {
 	@Test // Tests the constructor
 	public void BoatTest() {
 		Boat boat = new Boat(3, 0);
-		boolean[] aBox = new boolean[3];
+		boolean[] aBox = new boolean[3]; //Ahora es Box
 		assertEquals(boat.getSize(), 3);
 		assertEquals(boat.getOrientation(), 0);
 		assertTrue(boat.getAlive());

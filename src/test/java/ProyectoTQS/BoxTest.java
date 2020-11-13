@@ -24,7 +24,7 @@ public class BoxTest {
 	public void AttackedTest() {
 		Box b = new Box();
 		assertFalse(b.getAttacked());
-		b.setAttacked(true);
+		b.setAttacked();
 		assertTrue(b.getAttacked());
 	}
 }
