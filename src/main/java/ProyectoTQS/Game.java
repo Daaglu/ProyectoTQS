@@ -76,4 +76,7 @@ public class Game {
 	}
 	
 	
+	// funcion que se encargue de inicializar los barcos en el tablero 
+	// con un for y asi poder tratar las excepciones
+	
 }

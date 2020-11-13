@@ -38,5 +38,4 @@ public class GameTest {
 		game.changeTurn();
 		assertEquals(game.getTurn(), 0);
 	}
-	
 }

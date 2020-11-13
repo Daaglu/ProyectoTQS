@@ -67,5 +67,16 @@ public class Player {
 		this.m_listBoats.add(b);
 	}
 		
-	
+	//Funcion que se encargue de introducir datos para inicializar los barcos al tablero
+	public int[] enterPositionBoats(){
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter the first possition of the boat: ");
+		System.out.println("Enter the row: ");
+		int row = in.nextInt();
+		System.out.println("Enter the column: ");
+		int col = in.nextInt();
+		System.out.println("Enter the orientation: ");
+		int orientation = in.nextInt();
+		return new int[] {row, col, orientation};
+	}
 }

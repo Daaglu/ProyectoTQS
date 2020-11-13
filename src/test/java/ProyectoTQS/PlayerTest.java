@@ -45,5 +45,11 @@ public class PlayerTest {
 		assertEquals(p1.getBoatList().get(9).getSize(), 4);
 		assertEquals(p1.getBoatList().get(5).getOrientation(), -1);
 	}
-
+	
+	//@Test // This tests the move of a player, but is commented because the player has to enter data.
+	public void enterPositionBoatsTest() throws IOException {
+		Player p1 = new Player("Player 1");			
+		assertArrayEquals(p1.enterPositionBoats(), new int[] {2,2,0});
+	}
+	
 }
