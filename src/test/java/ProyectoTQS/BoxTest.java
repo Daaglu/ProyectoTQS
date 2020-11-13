@@ -7,17 +7,10 @@ import org.junit.Test;
 public class BoxTest {
 
 	@Test // Tests the constructor
-	public void Boxtest() {
+	public void BoxTest() {
 		Box box = new Box();
 		assertFalse(box.getState());
 	}
-	
-	/*@Test // Tests if the method changes the state correctly
-	public void ChangeStateTest() {
-		Box box = new Box();
-		box.changeState(true);
-		assertTrue(box.getState());
-	}*/
 	
 	@Test
 	public void setBoatTest() {
@@ -25,5 +18,13 @@ public class BoxTest {
 		Boat boat = new Boat(2,1);
 		box.setBoat(boat);
 		assertEquals(box.getBoat(),boat);
+	}
+	
+	@Test
+	public void AttackedTest() {
+		Box b = new Box();
+		assertFalse(b.getAttacked());
+		b.setAttacked(true);
+		assertTrue(b.getAttacked());
 	}
 }

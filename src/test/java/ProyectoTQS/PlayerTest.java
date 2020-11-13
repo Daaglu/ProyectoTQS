@@ -32,7 +32,6 @@ public class PlayerTest {
 	public void putBoatsTest() {
 		Player p1 = new Player("Player 1");
 		p1.putBoats();
-		p1.printList();
 	}
 
 }
