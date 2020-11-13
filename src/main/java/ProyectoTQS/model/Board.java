@@ -42,6 +42,7 @@ public class Board {
 	public boolean checkAndSet(int x, int y, Boat boat) {
 		int size = boat.getSize();
 		int orientation = boat.getOrientation();
+		Box[][] matrix = getMatrix();
 		boolean set = true;
 		
 		switch(orientation) {
@@ -50,13 +51,12 @@ public class Board {
 				set = false;
 			}else {
 				for(int i = y; i < y+size; i++) {
-					if (this.m_matrixBoxes[x][i].getState()) {
-						set = false;
-						break;
+					if (matrix[x][i].getState()) {
+						return false;
 					}
 				}
 				for(int i = y; i<y+size;i++) {
-					this.m_matrixBoxes[x][i].setBoat(boat);
+					matrix[x][i].setBoat(boat);
 				}
 			}
 			break;
@@ -65,47 +65,40 @@ public class Board {
 				set = false;
 			}else {
 				for(int i = x; i<x+size;i++) {
-					if(this.m_matrixBoxes[i][y].getState()) {
-						set = false;
-						break;
+					if(matrix[i][y].getState()) {
+						return false;
 					}
 				}
 				for(int i = x; i<x+size;i++) {
-					this.m_matrixBoxes[i][y].setBoat(boat);
+					matrix[i][y].setBoat(boat);
 				}
 			}
 			break;
-		case 2://left0
+		case 2://left
 			if(y + 1 < size) {
 				set = false;
 			}else {
 				for(int i = y; i>y-size;i--) {
-					System.out.println("For pasado");
-					if(this.m_matrixBoxes[x][i].getState()) {
-						System.out.println("if pasado");
-						set = false;
-						break;
+					if(matrix[x][i].getState()) {
+						return false;
 					}
 				}
 				for(int i = y; i > y-size; i--) {
-					this.m_matrixBoxes[x][i].setBoat(boat);
+					matrix[x][i].setBoat(boat);
 				}
 			}
 			break;
 		case 3://up
 			if(x + 1 < size) {
 				set = false;
-			}else {
-				
-				for(int i = x; i>x-size;i--) {
-					if(this.m_matrixBoxes[i][y].getState()) {
-						set = false;
-						break;
+			} else {
+				for(int i = x; i > x-size;i--) {
+					if(matrix[i][y].getState()) {
+						return false;
 					}
 				}
-				
 				for(int i = x; i >x-size; i--) {
-					this.m_matrixBoxes[i][y].setBoat(boat);
+					matrix[i][y].setBoat(boat);
 				}
 			}
 			break;
