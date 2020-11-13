@@ -12,14 +12,18 @@ public class Game {
 	private Player m_p1;
 	private Player m_p2;
 	private int m_turn;
-	private Board m_board;
+	private Board m_board1;
+	private Board m_board2;
 	
 	// Constructor
 	public Game() {
 		this.m_p1 = new Player("Player 1");
+		// Create the boats for player 1
 		this.m_p2 = new Player("Player 2");
-		this.m_turn = 0; //Player 1: 0 Player 2: 1
-		this.m_board = new Board();
+		// Create the boats for player 2
+		this.m_turn = 0; //Player 1: 0 //Player 2: 1
+		this.m_board1 = new Board();
+		this.m_board2 = new Board();
 	}
 	
 	// Getters
@@ -35,10 +39,13 @@ public class Game {
 		return this.m_p2;
 	}
 	
-	public Board getBoard(){
-		return this.m_board;
+	public Board getBoard1(){
+		return this.m_board1;
 	}	
 	
+	public Board getBoard2(){
+		return this.m_board2;
+	}	
 	
 	// This method is used to start a game.
 	public void start() {

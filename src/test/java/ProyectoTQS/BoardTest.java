@@ -30,7 +30,7 @@ public class BoardTest {
 		assertFalse(board.attack(x, y)); //attack again and test if this could be possible
 	}*/
 	
-	//@Test // This checks if we can pass pass a correct position and we can put a boat. // Passed
+	@Test // This checks if we can pass pass a correct position and we can put a boat. // Passed
 	public void setBoatTest() {
 		Board board = new Board();
 		Boat boat = new Boat(1,0);
@@ -56,7 +56,7 @@ public class BoardTest {
 		assertTrue(res_8);	
 	}
 	
-	//@Test // This tests if we can put a boat in a certain position and puts it. //Passed
+	@Test // This tests if we can put a boat in a certain position and puts it. //Passed
 	public void checkAndSet() {
 		Board board = new Board();
 		Boat boat1 = new Boat(2,0);

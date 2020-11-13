@@ -9,12 +9,12 @@ import java.util.Scanner;
 public class Player {
 	// Private attributes
 	private String m_name;
-	private int m_numBoats;
+	private int m_numBoats; // 10
 	
 	// Constructor
 	public Player(String name) {
 		this.m_name = name;
-		this.m_numBoats = 9;
+		this.m_numBoats = 10;
 	}
 	
 	// Getters
