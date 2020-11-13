@@ -1,4 +1,4 @@
-package ProyectoTQS;
+package ProyectoTQS.model;
 
 public class Box {
 	private boolean m_state; // false = water // true = boat

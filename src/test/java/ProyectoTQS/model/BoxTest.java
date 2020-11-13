@@ -1,10 +1,13 @@
-package ProyectoTQS;
+package ProyectoTQS.model;
 
 import static org.junit.Assert.*;
 
 import java.util.List;
 
 import org.junit.Test;
+
+import ProyectoTQS.model.Boat;
+import ProyectoTQS.model.Box;
 
 public class BoxTest {
 

@@ -1,10 +1,12 @@
-package ProyectoTQS;
+package ProyectoTQS.model;
 
 import static org.junit.Assert.*;
 
 import java.io.IOException;
 
 import org.junit.Test;
+
+import ProyectoTQS.model.Player;
 
 public class PlayerTest {
 
@@ -21,6 +23,7 @@ public class PlayerTest {
 		p1.setNumBoats(8);
 		assertEquals(p1.getNumBoats(), 8);
 	}
+	
 	
 	//@Test // This tests the move of a player, but is commented because the player has to enter data.
 	public void playTest() throws IOException {
@@ -46,10 +49,11 @@ public class PlayerTest {
 		assertEquals(p1.getBoatList().get(5).getOrientation(), -1);
 	}
 	
+	
 	//@Test // This tests the move of a player, but is commented because the player has to enter data.
 	public void enterPositionBoatsTest() throws IOException {
 		Player p1 = new Player("Player 1");			
-		assertArrayEquals(p1.enterPositionBoats(), new int[] {2,2,0});
+		assertArrayEquals(p1.enterPositionBoats(1), new int[] {2,2,0});
 	}
 	
 }

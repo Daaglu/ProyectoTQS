@@ -1,4 +1,4 @@
-package ProyectoTQS;
+package ProyectoTQS.model;
 
 import java.io.IOException;
 import java.util.LinkedList;
@@ -68,9 +68,9 @@ public class Player {
 	}
 		
 	//Funcion que se encargue de introducir datos para inicializar los barcos al tablero
-	public int[] enterPositionBoats(){
+	public int[] enterPositionBoats(int size){
 		Scanner in = new Scanner(System.in);
-		System.out.println("Enter the first possition of the boat: ");
+		System.out.println("Enter the first position of the boat of size " + size + ": " );
 		System.out.println("Enter the row: ");
 		int row = in.nextInt();
 		System.out.println("Enter the column: ");

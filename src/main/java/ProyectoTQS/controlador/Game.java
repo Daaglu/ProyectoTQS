@@ -1,4 +1,9 @@
-package ProyectoTQS;
+package ProyectoTQS.controlador;
+
+import ProyectoTQS.model.Board;
+import ProyectoTQS.model.Player;
+import ProyectoTQS.model.Boat;
+import ProyectoTQS.vista.showGame;
 
 // This class implements a Game. It has two players, the turn to know which player has to play and a board.
 public class Game {
@@ -78,5 +83,22 @@ public class Game {
 	
 	// funcion que se encargue de inicializar los barcos en el tablero 
 	// con un for y asi poder tratar las excepciones
-	
+	public void initilizateBoats() {
+		showGame sgame = new showGame();
+		for (Boat boat : m_p1.getBoatList()) {
+			boolean positioned = false;
+			while (!positioned) {
+				int[] res = m_p1.enterPositionBoats(boat.getSize()); //row, col, orientation
+				boat.setOrientation(res[2]);
+				positioned = m_board1.setBoat(boat, res[0], res[1]);
+				if (!positioned) {
+					System.out.println("Error: Wrong position or orientation.");
+				}
+				else {
+					sgame.show(this.m_board1);
+				}
+				
+			}
+		}
+	}
 }

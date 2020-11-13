@@ -1,13 +1,16 @@
-package ProyectoTQS;
+package ProyectoTQS.controlador;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import ProyectoTQS.controlador.Game;
+import ProyectoTQS.model.Board;
+
 public class GameTest {
 
 	@Test // Tests the constructor
-	public void gametest() {
+	public void gameTest() {
 		Game game = new Game();
 		Board board = new Board();
 		assertEquals(game.getPlayer1().getName(), "Player 1");
@@ -31,11 +34,18 @@ public class GameTest {
 	}
 	
 	@Test
-	public void changeTrun() {
+	public void changeTurnTest() {
 		Game game = new Game();
 		game.changeTurn();
 		assertEquals(game.getTurn(), 1);
 		game.changeTurn();
 		assertEquals(game.getTurn(), 0);
+	}
+	
+	@Test
+	public void initializateBoatsTest() {
+		Game game = new Game();
+		game.initilizateBoats();
+		
 	}
 }

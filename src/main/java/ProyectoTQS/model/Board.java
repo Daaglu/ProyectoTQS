@@ -1,4 +1,4 @@
-package ProyectoTQS;
+package ProyectoTQS.model;
 
 // This class represents a board. It has the number of boxes and a 8x8 type Box matrix.
 public class Board {
@@ -37,6 +37,7 @@ public class Board {
 			return false;
 	}*/
 	
+	
 	// This method checks if there's enough space and puts the boat
 	public boolean checkAndSet(int x, int y, Boat boat) {
 		int size = boat.getSize();
@@ -45,38 +46,66 @@ public class Board {
 		
 		switch(orientation) {
 		case 0://right
-			if((9-x) + 1 < size) {
+			if((9-y)< size) {
 				set = false;
 			}else {
-				for(int i = 0; i<size;i++) {
-					this.m_matrixBoxes[i][y].setBoat(boat);
+				for(int i = y; i < y+size; i++) {
+					if (this.m_matrixBoxes[x][i].getState()) {
+						set = false;
+						break;
+					}
+				}
+				for(int i = y; i<y+size;i++) {
+					this.m_matrixBoxes[x][i].setBoat(boat);
 				}
 			}
 			break;
 		case 1://down
-			if((9-y) + 1 < size) {
+			if((9-x) + 1 < size) {
 				set = false;
 			}else {
-				for(int i = 0; i<size;i++) {
-					this.m_matrixBoxes[x][i].setBoat(boat);
+				for(int i = x; i<x+size;i++) {
+					if(this.m_matrixBoxes[i][y].getState()) {
+						set = false;
+						break;
+					}
 				}
-			}
-			break;
-		case 2://left
-			if((0+x) + 1 < size) {
-				set = false;
-			}else {
-				for(int i = size; i > 0; i--) {
+				for(int i = x; i<x+size;i++) {
 					this.m_matrixBoxes[i][y].setBoat(boat);
 				}
 			}
 			break;
-		case 3://up
-			if((0+y) + 1 < size) {
+		case 2://left0
+			if(y + 1 < size) {
 				set = false;
 			}else {
-				for(int i = size; i > 0; i--) {
+				for(int i = y; i>y-size;i--) {
+					System.out.println("For pasado");
+					if(this.m_matrixBoxes[x][i].getState()) {
+						System.out.println("if pasado");
+						set = false;
+						break;
+					}
+				}
+				for(int i = y; i > y-size; i--) {
 					this.m_matrixBoxes[x][i].setBoat(boat);
+				}
+			}
+			break;
+		case 3://up
+			if(x + 1 < size) {
+				set = false;
+			}else {
+				
+				for(int i = x; i>x-size;i--) {
+					if(this.m_matrixBoxes[i][y].getState()) {
+						set = false;
+						break;
+					}
+				}
+				
+				for(int i = x; i >x-size; i--) {
+					this.m_matrixBoxes[i][y].setBoat(boat);
 				}
 			}
 			break;
@@ -96,7 +125,7 @@ public class Board {
 			return false;
 		}
 		else {
-			if (this.getBox(x, y).getState()) {
+			if (this.getBox(x, y).getState()) { // Si ya hay un barco
 				return false;
 			}
 			else {

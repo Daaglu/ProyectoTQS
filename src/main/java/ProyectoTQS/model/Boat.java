@@ -1,4 +1,4 @@
-package ProyectoTQS;
+package ProyectoTQS.model;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -43,6 +43,10 @@ public class Boat {
 	
 	public void setPositionBox(Box b) {
 		this.m_listBoxes.add(b);
+	}
+	
+	public void setOrientation(int orientation) {
+		this.m_orientation = orientation;
 	}
 	
 	// This method changes the state of the boat
