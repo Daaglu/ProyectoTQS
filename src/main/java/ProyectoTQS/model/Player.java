@@ -6,22 +6,15 @@ import java.util.List;
 import java.util.Scanner;
 
 // This class represents one Player of the game. Every player has 10 boats and a different name.
-public class Player {
+public class Player{
 	// Private attributes
-	private String m_name;
 	private int m_numBoats; // 10
 	private List<Boat> m_listBoats;
 	
 	// Constructor
-	public Player(String name) {
-		this.m_name = name;
-		this.m_numBoats = 10;
+	public Player() {
+		this.m_numBoats = 0;
 		this.m_listBoats = new LinkedList<Boat>();
-	}
-	
-	// Getters
-	public String getName() {
-		return this.m_name;
 	}
 	
 	public int getNumBoats() {
@@ -38,7 +31,7 @@ public class Player {
 	}
 	
 	// This method is for enter the row and column to make a move.
-	public int[] play() throws IOException {
+	public int[] play(){
 		Scanner in = new Scanner(System.in);
 		System.out.println("Enter the row: ");
 		int row = in.nextInt();
@@ -51,20 +44,24 @@ public class Player {
 		for (int i = 0; i < 4; i++) {
 			Boat b = new Boat(1,-1);
 			this.m_listBoats.add(b);
+			this.m_numBoats++;
 		}
 		
 		for (int i = 0; i < 3; i++) {
 			Boat b = new Boat(2,-1);
 			this.m_listBoats.add(b);
+			this.m_numBoats++;
 		}
 		
 		for (int i = 0; i < 2; i++) {
 			Boat b = new Boat(3,-1);
 			this.m_listBoats.add(b);
+			this.m_numBoats++;
 		}
 		
 		Boat b = new Boat(4,-1);
 		this.m_listBoats.add(b);
+		this.m_numBoats++;
 	}
 		
 	//Funcion que se encargue de introducir datos para inicializar los barcos al tablero

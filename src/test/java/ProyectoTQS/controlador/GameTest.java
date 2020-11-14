@@ -13,8 +13,6 @@ public class GameTest {
 	public void gameTest() {
 		Game game = new Game();
 		Board board = new Board();
-		assertEquals(game.getPlayer1().getName(), "Player 1");
-		assertEquals(game.getPlayer2().getName(), "Player 2");
 		assertEquals(game.getPlayer1().getNumBoats(), 10);
 		assertEquals(game.getPlayer2().getNumBoats(), 10);
 		assertEquals(game.getTurn(), 0);
