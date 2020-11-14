@@ -24,7 +24,18 @@ public class Box {
 	}
 	
 	public boolean setAttacked() {
-		this.m_attacked = true;
+		if(!m_attacked) {
+			this.m_attacked = true;
+			if(m_state) {
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
+		else {
+			return false;
+		}
 	}
 	
 	// This method links the box with the boat in both ways

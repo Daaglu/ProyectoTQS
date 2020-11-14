@@ -30,8 +30,16 @@ public class BoxTest {
 	@Test
 	public void AttackedTest() {
 		Box b = new Box();
+		b.setState(true);
+		assertFalse(b.getAttacked()); //no haya sido atacado
+		assertTrue(b.setAttacked()); //ataque y haya barco
+		assertTrue(b.getAttacked()); //haya sido atacado
+		assertFalse(b.setAttacked()); //no pueda atacar otra vez
+		Box b2 = new Box();
+		b2.setState(false);
 		assertFalse(b.getAttacked());
-		b.setAttacked();
+		assertFalse(b.setAttacked());
 		assertTrue(b.getAttacked());
+		assertFalse(b.setAttacked());
 	}
 }

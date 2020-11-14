@@ -100,8 +100,13 @@ public class Game {
 	}
 	
 	public void doAttack(interfaceKeyboard kb) {
-		int[] attack1 = m_p1.attack(kb);
-		m_board2.getBox(attack1[0], attack1[1]).setAttacked();
-		
+		if(m_turn == 0) {
+			int[] attack1 = m_p1.attack(kb);
+			m_board2.getBox(attack1[0], attack1[1]).setAttacked();
+		}
+		else {
+			int[] attack2 = m_p2.attack(kb);
+			m_board1.getBox(attack2[0], attack2[1]).setAttacked();
+		}
 	}
 }
