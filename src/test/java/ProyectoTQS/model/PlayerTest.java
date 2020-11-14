@@ -60,15 +60,11 @@ public class PlayerTest {
 	@Test
 	public void attackTest() {
 		Player p1 = new Player();
-		Player p2 = new Player();
-		Board board = new Board();
-		p2.createBoats();
-		Boat boat = p2.getBoatList().get(0;
-		int[] res = p2.enterPositionBoats(boat.getSize()); //row, col, orientation
-		boat.setOrientation(res[2]);
-		boolean positioned = board.setBoat(boat, res[0], res[1]);
-		p1.attack(board);
-		assertTrue(boat.checkDead());
+		int[] positions = p1.attack();
+		assertEquals(positions,new int[] {0,0});
+		int[] positions = p1.attack();
+		assertEquals(positions,new int[] {9,9});
+		
 	}
 	
 }
