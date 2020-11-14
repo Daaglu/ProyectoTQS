@@ -23,6 +23,10 @@ public class Box {
 		return this.m_attacked;
 	}
 	
+	public void setState(boolean state) {
+		m_state = state;
+	}
+	
 	public boolean setAttacked() {
 		if(!m_attacked) {
 			this.m_attacked = true;
