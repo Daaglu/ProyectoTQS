@@ -1,7 +1,5 @@
 package ProyectoTQS.controlador;
 
-import static org.junit.Assert.assertTrue;
-
 import ProyectoTQS.model.Board;
 import ProyectoTQS.model.Player;
 import ProyectoTQS.model.interfaceKeyboard;
@@ -97,16 +95,40 @@ public class Game {
 				
 			}
 		}
+		
+		for (Boat boat : m_p2.getBoatList()) {
+			boolean positioned = false;
+			while (!positioned) {
+				int[] res = m_p2.enterPositionBoats(boat.getSize(), kb); //row, col, orientation
+				boat.setOrientation(res[2]);
+				positioned = m_board2.setBoat(boat, res[0], res[1]);
+				if (!positioned) {
+					System.out.println("Error: Wrong position or orientation.");
+				}
+				else {
+					sgame.show(this.m_board2);
+				}
+				
+			}
+		}
 	}
 	
 	public void doAttack(interfaceKeyboard kb) {
+		boolean hit = false;
+		showGame sgame = new showGame();
 		if(m_turn == 0) {
-			int[] attack1 = m_p1.attack(kb);
-			m_board2.getBox(attack1[0], attack1[1]).setAttacked();
+			do {
+				int[] attack1 = m_p1.attack(kb);
+				hit = m_board2.getBox(attack1[0], attack1[1]).setAttacked();
+				sgame.show(m_board2);
+			}while(hit);
 		}
 		else {
-			int[] attack2 = m_p2.attack(kb);
-			m_board1.getBox(attack2[0], attack2[1]).setAttacked();
+			do {
+				int[] attack2 = m_p2.attack(kb);
+				m_board1.getBox(attack2[0], attack2[1]).setAttacked();
+				sgame.show(m_board1);
+			}while(hit);
 		}
 	}
 }
