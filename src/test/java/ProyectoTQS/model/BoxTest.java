@@ -37,9 +37,9 @@ public class BoxTest {
 		assertFalse(b.setAttacked()); //no pueda atacar otra vez
 		Box b2 = new Box();
 		b2.setState(false);
-		assertFalse(b.getAttacked());
-		assertFalse(b.setAttacked());
-		assertTrue(b.getAttacked());
-		assertFalse(b.setAttacked());
+		assertFalse(b2.getAttacked());
+		assertFalse(b2.setAttacked());
+		assertTrue(b2.getAttacked());
+		assertFalse(b2.setAttacked());
 	}
 }
