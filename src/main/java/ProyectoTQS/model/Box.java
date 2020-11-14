@@ -23,7 +23,7 @@ public class Box {
 		return this.m_attacked;
 	}
 	
-	public void setAttacked() {
+	public boolean setAttacked() {
 		this.m_attacked = true;
 	}
 	
