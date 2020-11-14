@@ -30,15 +30,6 @@ public class Player{
 		this.m_numBoats = numBoats;
 	}
 	
-	// This method is for enter the row and column to make a move.
-	public int[] play(){
-		Scanner in = new Scanner(System.in);
-		System.out.println("Enter the row: ");
-		int row = in.nextInt();
-		System.out.println("Enter the column: ");
-		int col = in.nextInt();
-		return new int[] {row, col};
-	}
 	
 	public void createBoats(){
 		for (int i = 0; i < 4; i++) {
@@ -75,5 +66,16 @@ public class Player{
 		System.out.println("Enter the orientation: ");
 		int orientation = in.nextInt();
 		return new int[] {row, col, orientation};
+	}
+	
+	
+	// This method is for enter the row and column to make a move.
+	public int[] attack() {
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter the row you want attack: ");
+		int row = in.nextInt();
+		System.out.println("Enter the column you want attack: ");
+		int col = in.nextInt();
+		return new int[] {row,col};
 	}
 }

@@ -23,13 +23,6 @@ public class PlayerTest {
 		assertEquals(p1.getNumBoats(), 8);
 	}
 	
-	
-	//@Test // This tests the move of a player, but is commented because the player has to enter data.
-	public void playTest() throws IOException {
-		Player p1 = new Player();
-		assertArrayEquals(p1.play(), new int[] {2,2});
-	}
-	
 	@Test
 	public void createBoatsTest() {
 		Player p1 = new Player();
@@ -60,10 +53,9 @@ public class PlayerTest {
 	@Test
 	public void attackTest() {
 		Player p1 = new Player();
-		int[] positions = p1.attack();
-		assertEquals(positions,new int[] {0,0});
-		int[] positions = p1.attack();
-		assertEquals(positions,new int[] {9,9});
+		assertArrayEquals(p1.attack(),new int[] {0,0});
+		assertArrayEquals(p1.attack(),new int[] {9,9});
+		
 		
 	}
 	
