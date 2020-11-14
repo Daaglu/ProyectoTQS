@@ -3,10 +3,12 @@ package ProyectoTQS.model;
 import static org.junit.Assert.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import org.junit.Test;
 
 import ProyectoTQS.model.Player;
+import mockObjects.mockKeyboard;
 
 public class PlayerTest {
 
@@ -44,13 +46,18 @@ public class PlayerTest {
 	}
 	
 	
-	//@Test // This tests the move of a player, but is commented because the player has to enter data.
+	@Test // This tests the move of a player, but is commented because the player has to enter data.
 	public void enterPositionBoatsTest() throws IOException {
-		Player p1 = new Player();			
-		assertArrayEquals(p1.enterPositionBoats(1), new int[] {2,2,0});
+		Player p1 = new Player();
+		interfaceKeyboard kb = new mockKeyboard();
+		kb.addValue(2);
+		kb.addValue(2);
+		kb.addValue(0);
+		
+		assertArrayEquals(p1.enterPositionBoats(1,kb), new int[] {2,2,0});
 	}
 	
-	@Test
+	//@Test
 	public void attackTest() {
 		Player p1 = new Player();
 		assertArrayEquals(p1.attack(),new int[] {0,0});

@@ -1,5 +1,7 @@
 package ProyectoTQS.controlador;
 
+import static org.junit.Assert.assertTrue;
+
 import ProyectoTQS.model.Board;
 import ProyectoTQS.model.Player;
 import ProyectoTQS.model.Boat;
@@ -94,5 +96,11 @@ public class Game {
 				
 			}
 		}
+	}
+	
+	public void doAttack() {
+		int[] attack1 = m_p1.attack();
+		m_board2.getBox(attack1[0], attack1[1]).setAttacked();
+		
 	}
 }

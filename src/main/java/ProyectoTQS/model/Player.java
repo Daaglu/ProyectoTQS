@@ -56,15 +56,14 @@ public class Player{
 	}
 		
 	//Funcion que se encargue de introducir datos para inicializar los barcos al tablero
-	public int[] enterPositionBoats(int size){
-		Scanner in = new Scanner(System.in);
+	public int[] enterPositionBoats(int size, interfaceKeyboard kb){
 		System.out.println("Enter the first position of the boat of size " + size + ": " );
 		System.out.println("Enter the row: ");
-		int row = in.nextInt();
+		int row = kb.keyboardIn();
 		System.out.println("Enter the column: ");
-		int col = in.nextInt();
+		int col = kb.keyboardIn();
 		System.out.println("Enter the orientation: ");
-		int orientation = in.nextInt();
+		int orientation = kb.keyboardIn();
 		return new int[] {row, col, orientation};
 	}
 	
