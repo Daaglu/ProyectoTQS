@@ -11,6 +11,18 @@ import ProyectoTQS.model.Player;
 import mockObjects.mockKeyboard;
 
 public class PlayerTest {
+	interfaceKeyboard kbPos = new mockKeyboard();
+	interfaceKeyboard kbAtt = new mockKeyboard();
+	
+	public PlayerTest() {
+		kbPos.addValue(2);
+		kbPos.addValue(2);
+		kbPos.addValue(0);
+		kbAtt.addValue(0);
+		kbAtt.addValue(0);
+		kbAtt.addValue(9);
+		kbAtt.addValue(9);
+	}
 
 	@Test // This tests the Constructor.
 	public void PlayerTest() {
@@ -49,19 +61,14 @@ public class PlayerTest {
 	@Test // This tests the move of a player, but is commented because the player has to enter data.
 	public void enterPositionBoatsTest() throws IOException {
 		Player p1 = new Player();
-		interfaceKeyboard kb = new mockKeyboard();
-		kb.addValue(2);
-		kb.addValue(2);
-		kb.addValue(0);
-		
-		assertArrayEquals(p1.enterPositionBoats(1,kb), new int[] {2,2,0});
+		assertArrayEquals(p1.enterPositionBoats(1,kbPos), new int[] {2,2,0});
 	}
 	
-	//@Test
+	@Test
 	public void attackTest() {
 		Player p1 = new Player();
-		assertArrayEquals(p1.attack(),new int[] {0,0});
-		assertArrayEquals(p1.attack(),new int[] {9,9});
+		assertArrayEquals(p1.attack(kbAtt),new int[] {0,0});
+		assertArrayEquals(p1.attack(kbAtt),new int[] {9,9});
 		
 		
 	}

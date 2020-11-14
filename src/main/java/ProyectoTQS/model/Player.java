@@ -69,12 +69,11 @@ public class Player{
 	
 	
 	// This method is for enter the row and column to make a move.
-	public int[] attack() {
-		Scanner in = new Scanner(System.in);
+	public int[] attack(interfaceKeyboard kb) {
 		System.out.println("Enter the row you want attack: ");
-		int row = in.nextInt();
+		int row = kb.keyboardIn();
 		System.out.println("Enter the column you want attack: ");
-		int col = in.nextInt();
+		int col = kb.keyboardIn();
 		return new int[] {row,col};
 	}
 }
