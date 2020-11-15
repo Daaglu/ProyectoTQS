@@ -61,10 +61,6 @@ public class Game{
 		this.m_p2 = p;
 	}
 	
-	// This method is used to start a game.
-	public void start() {
-	// not implemented yet	
-	}
 	
 	// This method checks if any of the players has won.
 	public int checkWin() {
