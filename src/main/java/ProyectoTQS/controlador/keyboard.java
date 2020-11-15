@@ -1,4 +1,4 @@
-package ProyectoTQS.model;
+package ProyectoTQS.controlador;
 
 import java.util.Scanner;
 

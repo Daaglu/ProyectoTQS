@@ -2,7 +2,6 @@ package ProyectoTQS.controlador;
 
 import ProyectoTQS.model.Board;
 import ProyectoTQS.model.Player;
-import ProyectoTQS.model.interfaceKeyboard;
 import ProyectoTQS.model.Boat;
 import ProyectoTQS.vista.showGame;
 

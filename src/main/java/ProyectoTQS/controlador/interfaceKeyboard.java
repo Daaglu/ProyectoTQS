@@ -1,4 +1,4 @@
-package ProyectoTQS.model;
+package ProyectoTQS.controlador;
 
 public interface interfaceKeyboard {
 	public int keyboardIn();

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
+import ProyectoTQS.controlador.interfaceKeyboard;
 import ProyectoTQS.model.Player;
 import mockObjects.mockKeyboard;
 

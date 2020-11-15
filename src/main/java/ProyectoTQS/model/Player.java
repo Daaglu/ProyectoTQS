@@ -5,6 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
+import ProyectoTQS.controlador.interfaceKeyboard;
+
 // This class represents one Player of the game. Every player has 10 boats and a different name.
 public class Player{
 	// Private attributes

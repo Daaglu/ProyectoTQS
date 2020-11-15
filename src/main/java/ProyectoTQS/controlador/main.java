@@ -1,8 +1,5 @@
 package ProyectoTQS.controlador;
 
-import ProyectoTQS.model.interfaceKeyboard;
-import ProyectoTQS.model.keyboard;
-
 public class main{
 	public static void main(String[] args){
 		Game game = new Game();

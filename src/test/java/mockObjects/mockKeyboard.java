@@ -2,7 +2,7 @@ package mockObjects;
 
 import java.util.ArrayList;
 
-import ProyectoTQS.model.interfaceKeyboard;
+import ProyectoTQS.controlador.interfaceKeyboard;
 
 public class mockKeyboard implements interfaceKeyboard{
 	ArrayList<Integer> array = new ArrayList<Integer>(); //añado datos
