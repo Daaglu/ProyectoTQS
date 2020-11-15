@@ -11,12 +11,6 @@ import ProyectoTQS.model.Box;
 
 public class BoxTest {
 
-	@Test // Tests the constructor
-	public void BoxTest() {
-		Box box = new Box();
-		assertFalse(box.getState());
-	}
-	
 	@Test
 	public void setBoatTest() {
 		Box box = new Box();
@@ -27,7 +21,7 @@ public class BoxTest {
 		assertEquals(blist.get(0), box);
 	}
 	
-	@Test
+	//@Test
 	public void AttackedTest() {
 		Box b = new Box();
 		assertFalse(b.getAttacked());
