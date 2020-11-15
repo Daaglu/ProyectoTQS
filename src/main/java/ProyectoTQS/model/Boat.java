@@ -76,7 +76,7 @@ public class Boat {
 		if(totalAttacked == this.m_size) {
 			this.m_state = 2;
 
-			System.out.println("Barco hundido");
+			System.out.println("Sunken ship");
 		}
 	}
 }

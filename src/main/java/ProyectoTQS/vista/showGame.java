@@ -5,7 +5,7 @@ import ProyectoTQS.model.interfaceBoard;
 
 public class showGame {
 	//main
-	public void show(interfaceBoard b) {
+	public void showCreation(interfaceBoard b) {
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++) {
 				if(b.getBox(i, j).getState())
@@ -18,13 +18,20 @@ public class showGame {
 			System.out.print("\n");
 		}
 	}
-	
-	public void showMock(interfaceBoard b) {
-		for (int i = 0; i < 2; i++) {
-			for (int j = 0; j < 2; j++) {
-				if(b.getBox(i, j).getState())
+	public void showPlay(interfaceBoard b) {
+		for (int i = 0; i < 10; i++) {
+			for (int j = 0; j < 10; j++) {
+				if(b.getBox(i, j).getAttacked())
 				{
-					System.out.print(" X ");
+					if(b.getBox(i, j).getState()) {
+						if(b.getBox(i, j).getBoat().checkDead()) {
+							System.out.print(" X ");
+						}
+						else
+							System.out.print(" * ");
+					}
+					else
+						System.out.print(" O ");
 				} else {
 					System.out.print(" _ ");
 				}

@@ -27,5 +27,5 @@ public interface interfaceGame {
 	// con un for y asi poder tratar las excepciones
 	public void initilizateBoats(interfaceKeyboard kb);
 	
-	public void doAttack(interfaceKeyboard kb);
+	public int doAttack(interfaceKeyboard kb);
 }
