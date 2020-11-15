@@ -2,17 +2,19 @@ package ProyectoTQS.controlador;
 
 import ProyectoTQS.model.Board;
 import ProyectoTQS.model.Player;
+import ProyectoTQS.model.interfaceBoard;
 import ProyectoTQS.model.Boat;
 import ProyectoTQS.vista.showGame;
 
+
 // This class implements a Game. It has two players, the turn to know which player has to play and a board.
-public class Game {	
+public class Game implements interfaceGame{	
 	// Private attributes
 	private Player m_p1;
 	private Player m_p2;
 	private int m_turn;
-	private Board m_board1;
-	private Board m_board2;
+	private interfaceBoard m_board1;
+	private interfaceBoard m_board2;
 	
 	// Constructor
 	public Game() {
@@ -41,11 +43,11 @@ public class Game {
 	}
 	
 	public Board getBoard1(){
-		return this.m_board1;
+		return (Board) this.m_board1;
 	}	
 	
 	public Board getBoard2(){
-		return this.m_board2;
+		return (Board) this.m_board2;
 	}	
 	
 	// This method is used to start a game.
@@ -55,11 +57,14 @@ public class Game {
 	
 	// This method checks if any of the players has won.
 	public int checkWin() {
+		System.out.println("Check game p1 " + m_p1.getNumBoats());
 		if (this.m_p1.getNumBoats() == 0) {
 			System.out.println("Player 2 has won");
 			return 2;
 		}
 		else {
+
+			System.out.println("Check game p2 " + m_p2.getNumBoats());
 			if (this.m_p2.getNumBoats() == 0){
 				System.out.println("Player 1 has won");
 				return 1;
@@ -114,20 +119,31 @@ public class Game {
 	
 	public void doAttack(interfaceKeyboard kb) {
 		boolean hit = false;
+		int win = 0;
 		showGame sgame = new showGame();
 		if(m_turn == 0) {
 			do {
 				int[] attack1 = m_p1.attack(kb);
 				hit = m_board2.getBox(attack1[0], attack1[1]).setAttacked();
+				if(m_board2.getBox(attack1[0], attack1[1]).getBoat().checkDead()) {
+					m_p2.boatDied();
+					System.out.println("Lives p2: " + m_p2.getNumBoats());
+				}
 				sgame.show(m_board2);
-			}while(hit);
+				win = this.checkWin();
+			}while(hit|| win ==0);
 		}
 		else {
 			do {
 				int[] attack2 = m_p2.attack(kb);
-				m_board1.getBox(attack2[0], attack2[1]).setAttacked();
+				hit = m_board1.getBox(attack2[0], attack2[1]).setAttacked();
+				if(m_board1.getBox(attack2[0], attack2[1]).getBoat().checkDead()) {
+					m_p1.boatDied();
+					System.out.println("Lives p1: " + m_p1.getNumBoats());
+				}
 				sgame.show(m_board1);
-			}while(hit);
+				win = this.checkWin();
+			}while(hit || win ==0);
 		}
 	}
 }

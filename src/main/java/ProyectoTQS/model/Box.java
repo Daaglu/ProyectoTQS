@@ -31,6 +31,7 @@ public class Box {
 		if(!m_attacked) {
 			this.m_attacked = true;
 			if(m_state) {
+				m_boat.attacked();
 				return true;
 			}
 			else{

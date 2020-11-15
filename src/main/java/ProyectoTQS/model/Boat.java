@@ -12,7 +12,7 @@ public class Boat {
 	private int m_state; // 0 normal // 1 touched // 2 dead 
 	
 	// Constructor
-	Boat(int size, int orientation) {
+	public Boat(int size, int orientation) {
 		this.m_size = size;
 		this.m_orientation = orientation; // Ask in Game
 		this.m_alive = true;
@@ -62,6 +62,21 @@ public class Boat {
 		}
 		else {
 			return false;
+		}
+	}
+	
+	public void attacked() {
+		int totalAttacked = 0;
+		for(Box box: this.m_listBoxes){
+			if(box.getAttacked()) {
+				totalAttacked++;
+				this.m_state = 1;
+			}
+		}
+		if(totalAttacked == this.m_size) {
+			this.m_state = 2;
+
+			System.out.println("Barco hundido");
 		}
 	}
 }
