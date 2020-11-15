@@ -6,6 +6,8 @@ import org.junit.Test;
 
 import ProyectoTQS.controlador.Game;
 import ProyectoTQS.model.Board;
+import ProyectoTQS.model.Boat;
+import ProyectoTQS.model.Player;
 
 public class GameTest {
 
@@ -45,5 +47,11 @@ public class GameTest {
 		Game game = new Game();
 		game.initilizateBoats();
 		
+	}
+	
+	//@Test
+	public void doAttackTest() {
+		Game game = new Game();
+		assertTrue(game.doAttack());
 	}
 }

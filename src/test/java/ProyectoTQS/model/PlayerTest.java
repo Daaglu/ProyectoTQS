@@ -3,12 +3,27 @@ package ProyectoTQS.model;
 import static org.junit.Assert.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import org.junit.Test;
 
+import ProyectoTQS.controlador.interfaceKeyboard;
 import ProyectoTQS.model.Player;
+import mockObjects.mockKeyboard;
 
 public class PlayerTest {
+	interfaceKeyboard kbPos = new mockKeyboard();
+	interfaceKeyboard kbAtt = new mockKeyboard();
+	
+	public PlayerTest() {
+		kbPos.addValue(2);
+		kbPos.addValue(2);
+		kbPos.addValue(0);
+		kbAtt.addValue(0);
+		kbAtt.addValue(0);
+		kbAtt.addValue(9);
+		kbAtt.addValue(9);
+	}
 
 	@Test // This tests the Constructor.
 	public void PlayerTest() {
@@ -21,13 +36,6 @@ public class PlayerTest {
 		Player p1 = new Player();
 		p1.setNumBoats(8);
 		assertEquals(p1.getNumBoats(), 8);
-	}
-	
-	
-	//@Test // This tests the move of a player, but is commented because the player has to enter data.
-	public void playTest() throws IOException {
-		Player p1 = new Player();
-		assertArrayEquals(p1.play(), new int[] {2,2});
 	}
 	
 	@Test
@@ -51,10 +59,25 @@ public class PlayerTest {
 	}
 	
 	
-	//@Test // This tests the move of a player, but is commented because the player has to enter data.
+	@Test // This tests the move of a player, but is commented because the player has to enter data.
 	public void enterPositionBoatsTest() throws IOException {
-		Player p1 = new Player();			
-		assertArrayEquals(p1.enterPositionBoats(1), new int[] {2,2,0});
+		Player p1 = new Player();
+		assertArrayEquals(p1.enterPositionBoats(1,kbPos), new int[] {2,2,0});
+	}
+	
+	@Test
+	public void attackTest() {
+		Player p1 = new Player();
+		assertArrayEquals(p1.attack(kbAtt),new int[] {0,0});
+		assertArrayEquals(p1.attack(kbAtt),new int[] {9,9});
+	}
+	
+	@Test
+	public void livesTest() {
+		Player p1 = new Player();
+		p1.setNumBoats(1);
+		p1.boatDied();
+		assertEquals(0,p1.getNumBoats());
 	}
 	
 }

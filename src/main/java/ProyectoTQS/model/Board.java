@@ -1,7 +1,7 @@
 package ProyectoTQS.model;
 
 // This class represents a board. It has the number of boxes and a 8x8 type Box matrix.
-public class Board {
+public class Board implements interfaceBoard{
 	private int m_numBoxes;
 	private Box[][] m_matrixBoxes;
 	
@@ -47,7 +47,7 @@ public class Board {
 		
 		switch(orientation) {
 		case 0://right
-			if((9-y)< size) {
+			if((9-y)+1< size) {
 				set = false;
 			}else {
 				for(int i = y; i < y+size; i++) {
