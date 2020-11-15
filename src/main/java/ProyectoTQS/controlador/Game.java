@@ -4,16 +4,17 @@ import ProyectoTQS.model.Board;
 import ProyectoTQS.model.Player;
 import ProyectoTQS.model.interfaceBoard;
 import ProyectoTQS.model.interfaceBoat;
+import ProyectoTQS.model.interfacePlayer;
 import ProyectoTQS.model.Boat;
 import ProyectoTQS.model.Box;
 import ProyectoTQS.vista.showGame;
 
 
 // This class implements a Game. It has two players, the turn to know which player has to play and a board.
-public class Game implements interfaceGame{	
+public class Game{	
 	// Private attributes
-	private Player m_p1;
-	private Player m_p2;
+	private interfacePlayer m_p1;
+	private interfacePlayer m_p2;
 	private int m_turn;
 	private interfaceBoard m_board1;
 	private interfaceBoard m_board2;
@@ -36,11 +37,11 @@ public class Game implements interfaceGame{
 		return this.m_turn;
 	}
 	
-	public Player getPlayer1() {
+	public interfacePlayer getPlayer1() {
 		return this.m_p1;
 	}
 	
-	public Player getPlayer2() {
+	public interfacePlayer getPlayer2() {
 		return this.m_p2;
 	}
 	
@@ -51,6 +52,14 @@ public class Game implements interfaceGame{
 	public Board getBoard2(){
 		return (Board) this.m_board2;
 	}	
+	
+	public void setPlayer1(interfacePlayer p) {
+		this.m_p1 = p;
+	}
+	
+	public void setPlayer2(interfacePlayer p) {
+		this.m_p2 = p;
+	}
 	
 	// This method is used to start a game.
 	public void start() {
@@ -124,6 +133,9 @@ public class Game implements interfaceGame{
 			do {
 				int[] attack1 = m_p1.attack(kb);
 				Box box = m_board2.getBox(attack1[0], attack1[1]);
+				if(box.getAttacked()) {
+					return -1;
+				}
 				hit = box.setAttacked();
 				if(hit) {
 					if(box.getBoat().checkDead()) {
@@ -137,7 +149,11 @@ public class Game implements interfaceGame{
 		else {
 			do {
 				int[] attack2 = m_p2.attack(kb);
-				hit = m_board1.getBox(attack2[0], attack2[1]).setAttacked();
+				Box box = m_board1.getBox(attack2[0], attack2[1]);
+				if(box.getAttacked()) {
+					return -1;
+				}
+				hit = box.setAttacked();
 				if(hit) {
 					if(m_board1.getBox(attack2[0], attack2[1]).getBoat().checkDead()) {
 						m_p1.boatDied();

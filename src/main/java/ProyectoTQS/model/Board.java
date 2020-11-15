@@ -39,7 +39,7 @@ public class Board implements interfaceBoard{
 	
 	
 	// This method checks if there's enough space and puts the boat
-	public boolean checkAndSet(int x, int y, Boat boat) {
+	public boolean checkAndSet(int x, int y, interfaceBoat boat) {
 		int size = boat.getSize();
 		int orientation = boat.getOrientation();
 		Box[][] matrix = getMatrix();
@@ -113,7 +113,7 @@ public class Board implements interfaceBoard{
 	}
 	
 	// This method puts a boat
-	public boolean setBoat(Boat boat, int x, int y) {
+	public boolean setBoat(interfaceBoat boat, int x, int y) {
 		if (x < 0 || x > 9 || y < 0 || y > 9) {
 			return false;
 		}

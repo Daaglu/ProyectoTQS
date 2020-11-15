@@ -8,7 +8,7 @@ import java.util.Scanner;
 import ProyectoTQS.controlador.interfaceKeyboard;
 
 // This class represents one Player of the game. Every player has 10 boats and a different name.
-public class Player{
+public class Player implements interfacePlayer{
 	// Private attributes
 	private int m_numBoats; // 10
 	private List<interfaceBoat> m_listBoats;
@@ -25,11 +25,6 @@ public class Player{
 	
 	public List<interfaceBoat> getBoatList(){
 		return this.m_listBoats;
-	}
-	
-	// Setters
-	public void setNumBoats(int numBoats) {
-		this.m_numBoats = numBoats;
 	}
 	
 	public void boatDied() {
@@ -76,10 +71,14 @@ public class Player{
 	
 	// This method is for enter the row and column to make a move.
 	public int[] attack(interfaceKeyboard kb) {
+		int row;
+		int col;
+		do {
 		System.out.println("Enter the row you want attack: ");
-		int row = kb.keyboardIn();
+		row = kb.keyboardIn();
 		System.out.println("Enter the column you want attack: ");
-		int col = kb.keyboardIn();
+		col = kb.keyboardIn();
+		}while(row > 9 || row < 0 || col > 9 || col < 0);
 		return new int[] {row,col};
 	}
 }

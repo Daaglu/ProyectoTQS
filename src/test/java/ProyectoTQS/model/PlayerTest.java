@@ -10,6 +10,7 @@ import org.junit.Test;
 import ProyectoTQS.controlador.interfaceKeyboard;
 import ProyectoTQS.model.Player;
 import mockObjects.mockKeyboard;
+import mockObjects.mockPlayer;
 
 public class PlayerTest {
 	interfaceKeyboard kbPos = new mockKeyboard();
@@ -29,13 +30,6 @@ public class PlayerTest {
 	public void PlayerTest() {
 		Player p1 = new Player();
 		assertEquals(p1.getNumBoats(), 0);
-	}
-	
-	@Test // Tests the setter by checking the new number of boats.
-	public void setBoatsTest() {
-		Player p1 = new Player();
-		p1.setNumBoats(8);
-		assertEquals(p1.getNumBoats(), 8);
 	}
 	
 	@Test
@@ -74,8 +68,7 @@ public class PlayerTest {
 	
 	@Test
 	public void livesTest() {
-		Player p1 = new Player();
-		p1.setNumBoats(1);
+		interfacePlayer p1 = new mockPlayer(1);
 		p1.boatDied();
 		assertEquals(0,p1.getNumBoats());
 	}

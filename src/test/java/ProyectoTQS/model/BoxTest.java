@@ -40,9 +40,7 @@ public class BoxTest {
 		assertFalse(b.setAttacked()); //no pueda atacar otra vez
 		
 		Box b2 = new Box();
-		interfaceBoat boat2 = new mockBoat();
 		b2.setState(false);
-		b2.setBoat(boat2);
 		assertFalse(b2.getAttacked());
 		assertFalse(b2.setAttacked());
 		assertTrue(b2.getAttacked());
