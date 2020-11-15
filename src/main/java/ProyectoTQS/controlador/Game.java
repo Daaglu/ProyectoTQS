@@ -62,7 +62,7 @@ public class Game{
 	}
 	
 	
-	// This method checks if any of the players has won.
+	// Aquest metode comprova si algun jugador ha guanyat.
 	public int checkWin() {
 		if (this.m_p1.getNumBoats() == 0) {
 			System.out.println("Player 2 has won");
@@ -79,13 +79,13 @@ public class Game{
 		}
 	}
 	
+	// Metode encaregat de canviar el torn dels jugadors.
 	public void changeTurn() {
 		this.m_turn = (this.m_turn + 1) % 2;
 	}
 	
 	
-	// funcion que se encargue de inicializar los barcos en el tablero 
-	// con un for y asi poder tratar las excepciones
+	// Funcio per inicialitzar els vaixells entrant dades.
 	public void initilizateBoats(interfaceKeyboard kb) {
 		showGame sgame = new showGame();
 		for (interfaceBoat boat : m_p1.getBoatList()) {
@@ -100,10 +100,8 @@ public class Game{
 				else {
 					sgame.showCreation(this.m_board1);
 				}
-				
 			}
 		}
-		
 		for (interfaceBoat boat : m_p2.getBoatList()) {
 			boolean positioned = false;
 			while (!positioned) {
@@ -116,11 +114,12 @@ public class Game{
 				else {
 					sgame.showCreation(this.m_board2);
 				}
-				
 			}
 		}
 	}
 	
+	
+	// Metode per fer un atac.
 	public int doAttack(interfaceKeyboard kb) {
 		boolean hit = false;
 		int win = 0;
