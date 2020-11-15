@@ -28,17 +28,8 @@ public class Board implements interfaceBoard{
 		return this.m_matrixBoxes;
 	}
 	
-	/*public boolean attack(int x, int y) {
-		if(!this.getBox(x, y).getState()) {
-			this.getBox(x,y).changeState(true);
-			return true;
-		}
-		else
-			return false;
-	}*/
-	
-	
-	// This method checks if there's enough space and puts the boat
+
+	// Aquest metode mira si hi ha prou espai per posar un vaixell i ho posa.
 	public boolean checkAndSet(int x, int y, interfaceBoat boat) {
 		int size = boat.getSize();
 		int orientation = boat.getOrientation();
@@ -112,13 +103,14 @@ public class Board implements interfaceBoard{
 		}
 	}
 	
-	// This method puts a boat
+	// Aquest metode comprova que les coordenades son correctes i prova de possar el vaixell.
 	public boolean setBoat(interfaceBoat boat, int x, int y) {
 		if (x < 0 || x > 9 || y < 0 || y > 9) {
 			return false;
 		}
 		else {
-			if (this.getBox(x, y).getState()) { // Si ya hay un barco
+			// Si hi ha un vaixell
+			if (this.getBox(x, y).getState()) { 
 				return false;
 			}
 			else {

@@ -27,11 +27,14 @@ public class Player implements interfacePlayer{
 		return this.m_listBoats;
 	}
 	
+	// Aquest method redueix el numero de vaixells. TEstejat amb el mockobject.
 	public void boatDied() {
-		this.m_numBoats--;
+		if (this.m_numBoats > 0 && this.m_numBoats <= 10) {
+			this.m_numBoats--;
+		}
 	}
 	
-	
+	// Aquest metode crea els vaixells d'un jugador.
 	public void createBoats(){
 		for (int i = 0; i < 4; i++) {
 			Boat b = new Boat(1,-1);
@@ -56,7 +59,7 @@ public class Player implements interfacePlayer{
 		this.m_numBoats++;
 	}
 		
-	//Funcion que se encargue de introducir datos para inicializar los barcos al tablero
+	// Aquesta funcio demana dades per posicionar els vaixells al tauler.
 	public int[] enterPositionBoats(int size, interfaceKeyboard kb){
 		System.out.println("Enter the first position of the boat of size " + size + ": " );
 		System.out.println("Enter the row (0 to 9): ");
@@ -69,10 +72,10 @@ public class Player implements interfacePlayer{
 	}
 	
 	
-	// This method is for enter the row and column to make a move.
+	// Aquest metode demana les coordenades d'atac.
 	public int[] attack(interfaceKeyboard kb) {
-		int row;
-		int col;
+		int row = 0;
+		int col = 0;
 		do {
 		System.out.println("Enter the row you want attack: ");
 		row = kb.keyboardIn();

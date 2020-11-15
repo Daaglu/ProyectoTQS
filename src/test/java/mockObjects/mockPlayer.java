@@ -17,7 +17,9 @@ public class mockPlayer implements interfacePlayer{
 	public void setNumBoats(int numBoats) {};
 	
 	public void boatDied() {
-		this.m_numBoats--;
+		if (this.m_numBoats > 0 && this.m_numBoats <= 10) {
+			this.m_numBoats--;
+		}
 	}
 	
 	

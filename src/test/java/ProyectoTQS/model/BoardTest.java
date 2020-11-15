@@ -10,57 +10,65 @@ import ProyectoTQS.model.Box;
 
 public class BoardTest {
 
-	@Test // This tests the constructor. // Passed
+	@Test // Test del constructor.
 	public void BoardTest() {
 		Board board = new Board();
 		assertEquals(board.getNumBoxes(), 100);
 		assertEquals(board.getBox(0, 0).getState(), new Box().getState());
 	}
 	
-	@Test // Test if the return value is a box // Passed
+	@Test // Test per veure si es crea bé una casella.
 	public void getBoxTest() {
 		Board board = new Board();
-		Box box = new Box();
 		assertFalse(board.getBox(0, 0).getState());
 	}
 	
-	/*@Test // Test the attack method
-	public void attackTest() {
-		Board board = new Board();
-		int x = 0;
-		int y = 0;
-		board.attack(x,y);
-		assertTrue(board.attack(x,y));
-		assertFalse(board.attack(x, y)); //attack again and test if this could be possible
-	}*/
 	
-	@Test // This checks if we can pass pass a correct position and we can put a boat. // Passed
+	@Test // Test de caixa negra amb particions equivalent i de caixa blanca amb statement i decision coverage.
 	public void setBoatTest() {
 		Board board = new Board();
 		Boat boat = new Boat(1,0);
 		Boat boat2 = new Boat(3,0);
-		boolean res_0 = board.setBoat(boat, 0, 0);
-		assertTrue(res_0);
-		assertTrue(board.getBox(0, 0).getState());
-		boolean res_1 = board.setBoat(boat, 9, 9);
-		assertTrue(res_1);
-		boolean res_2 = board.setBoat(boat, 11, 12);
+		// Fila fora del tauler.
+		boolean res_0 = board.setBoat(boat, -1, 1);
+		assertFalse(res_0);
+		// Columna fora del tauler.
+		boolean res_1 = board.setBoat(boat, 8, 12);
+		assertFalse(res_1);
+		// Fila i columna fora del tauler per sota.
+		boolean res_2 = board.setBoat(boat, -1, -1);
 		assertFalse(res_2);
-		boolean res_3 = board.setBoat(boat, -1, -1);
+		// Fila i columna fora del tauler per dalt.
+		boolean res_3 = board.setBoat(boat, 11, 12);
 		assertFalse(res_3);
-		boolean res_4 = board.setBoat(boat, -1, 1);
+		// Columna fora del tauler per sota.
+		boolean res_4 = board.setBoat(boat, 5, -1);
 		assertFalse(res_4);
-		boolean res_5 = board.setBoat(boat, 8, 12);
-		assertFalse(res_5);
-		boolean res_6 = board.setBoat(boat, 5, -1);
-		assertFalse(res_6);
-		boolean res_7 = board.setBoat(boat, 0, 0);
-		assertFalse(res_7);
-		boolean res_8 = board.setBoat(boat2, 1, 1);
-		assertTrue(res_8);	
+		// Esquina superior esquerra.
+		boolean res_5 = board.setBoat(boat, 0, 0);
+		assertTrue(res_5);
+		// Esquina supieror dreta.
+		boolean res_6 = board.setBoat(boat, 0, 9);
+		assertTrue(res_6);
+		// Esquina inferior esquerra.
+		boolean res_7 = board.setBoat(boat, 9, 0);
+		assertTrue(res_7);
+		// Esquina inferior dreta.
+		boolean res_8 = board.setBoat(boat, 9, 9);
+		assertTrue(res_8);
+		// Possar un vaixell a l'interior del tauler
+		boolean res_9 = board.setBoat(boat, 5, 5);
+		assertTrue(res_9);
+		// Possar un vaixell on ja hi ha un vaixell
+		boolean res_10 = board.setBoat(boat, 0, 0);
+		assertFalse(res_10);	
+		// Possar un vaixell al marge pero es sortiria
+		boolean res_11 = board.setBoat(boat2, 5, 9);
+		assertFalse(res_11);
+	
 	}
 	
-	@Test // This tests if we can put a boat in a certain position and puts it. //Passed
+	@Test // Test de caixa blanca amb statement coverage i decision coverage.
 	public void checkAndSet() {
 		Board board = new Board();
 		Boat boat1 = new Boat(2,0);
@@ -69,13 +77,13 @@ public class BoardTest {
 		Boat boat4 = new Boat(3,3);
 		Boat boat5 = new Boat(3,2);
 		Boat boat6 = new Boat(4,4);
-		// Put a Boat on the first Box.
+		// Possar un vaixell a l'esquina superior esquerra.
 		boolean res_0 = board.checkAndSet(0,0,boat1);
 		assertTrue(res_0);
-		// Put a boat on the last row first position.
+		// Possar un vaixell a l'esquina inferior esquerra.
 		boolean res_1 = board.checkAndSet(9,0,boat1);
 		assertTrue(res_1);
-		// Try to put a boat on a position already occupied.
+		// Posar un vaixell en una casella ocupada
 		boolean res_2 = board.checkAndSet(0,0,boat2);
 		assertFalse(res_2);
 		// Try to put a boat on the last position of the first row.
