@@ -12,7 +12,7 @@ import ProyectoTQS.model.Box;
 
 public class BoatTest {
 
-	@Test // Tests the constructor 
+	@Test // Test de caixa negra sobre el constructor.
 	public void BoatTest() {
 		Boat boat = new Boat(3, 0);
 		List<Box> blist = new LinkedList<Box>(); 
@@ -23,31 +23,53 @@ public class BoatTest {
 		assertEquals(boat.getList(), blist);
 	}
 	
-	@Test // Tests the changeState() method 
+	@Test // Test de caixa negra amb particions equivalents. 
+	//Test de caixa blanca amb statement coverage i decision coverage.
 	public void changeStateTest() {
 		Boat boat = new Boat(4, 0);
+		boat.changeState(-1);
+		assertEquals(boat.getState(), 0);
+		boat.changeState(1);
+		assertEquals(boat.getState(), 1);
+		boat.changeState(4);
+		assertEquals(boat.getState(), 1);
 		boat.changeState(2);
 		assertEquals(boat.getState(), 2);
 	}
 	
-	@Test // This test checks if the boat dies correctly
+	@Test // Test de caixa negra i test de caixa blanca amb statement coverage i decision coverage.
 	public void checkDeadTest() {
 		Boat boat = new Boat(3,1);
 		boolean res_0 = boat.checkDead();
 		assertFalse(res_0);
-		assertTrue(boat.getAlive());
 		boat.changeState(2);
 		boolean res_1 = boat.checkDead();
 		assertTrue(res_1);
-		assertFalse(boat.getAlive());
 	}
 	
-	@Test 
-	public void setPositiobBoxTest() {
+	@Test // Test de caixa negra.
+	public void setPositionBoxTest() {
 		Box b = new Box();
 		Boat boat = new Boat(2,1);
 		boat.setPositionBox(b);
 		assertEquals(boat.getList().get(0), b);
+	}
+	
+	@Test // Test de caja blanca amb statement coverage i decision coverage.
+	public void attackedTest() {
+		Boat b = new Boat(3,0);
+		Box b1 = new Box();
+		Box b2 = new Box();
+		Box b3 = new Box();
+		b1.setBoat(b);
+		b2.setBoat(b);
+		b3.setBoat(b);
+		b1.setAttacked();
+		assertEquals(b.getState(), 1);
+		b2.setAttacked();
+		assertEquals(b.getState(), 1);
+		b3.setAttacked();
+		assertEquals(b.getState(), 2);
 	}
 
 }

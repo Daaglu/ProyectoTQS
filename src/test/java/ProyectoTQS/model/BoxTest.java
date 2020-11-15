@@ -12,7 +12,7 @@ import mockObjects.mockBoat;
 
 public class BoxTest {
 
-	@Test
+	@Test // Test de caixa de negra.
 	public void setBoatTest() {
 		Box box = new Box();
 		Boat boat = new Boat(2,1);
@@ -22,16 +22,16 @@ public class BoxTest {
 		assertEquals(blist.get(0), box);
 	}
 	
-	//@Test
+	@Test // Test de caixa de blanca amb statement coverage i condition coverage. 
 	public void AttackedTest() {
 		Box b = new Box();
 		b.setState(true);
 		interfaceBoat boat = new mockBoat();
 		b.setBoat(boat);
-		assertFalse(b.getAttacked()); //no haya sido atacado
-		assertTrue(b.setAttacked()); //ataque y haya barco
-		assertTrue(b.getAttacked()); //haya sido atacado
-		assertFalse(b.setAttacked()); //no pueda atacar otra vez
+		assertFalse(b.getAttacked()); //not attacked yet
+		assertTrue(b.setAttacked()); //attack where there is a boat
+		assertTrue(b.getAttacked()); //has been attacked
+		assertFalse(b.setAttacked()); //can't attack again
 		
 		Box b2 = new Box();
 		b2.setState(false);

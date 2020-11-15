@@ -27,6 +27,7 @@ public class Box {
 		m_state = state;
 	}
 	
+	// This method is used to mark the box as attacked.
 	public boolean setAttacked() {
 		if(!m_attacked) {
 			this.m_attacked = true;

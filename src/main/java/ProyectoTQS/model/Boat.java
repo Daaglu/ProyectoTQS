@@ -51,7 +51,9 @@ public class Boat implements interfaceBoat{
 	
 	// This method changes the state of the boat
 	public void changeState(int state) {
-		this.m_state = state;
+		if (state <= 2 && state >= 0) {
+			this.m_state = state;
+		}
 	}
 	
 	// This method checks if the boat is dead by checking the state of the boat
