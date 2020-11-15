@@ -303,7 +303,7 @@ public class MainTest {
 
 	@Test
 	public void test() {
-		interfaceGame game = new Game();
+		Game game = new Game();
 		int win = 0;
 		game.initilizateBoats(kb);
 		do {
@@ -314,7 +314,7 @@ public class MainTest {
 		} while(win==0);
 		assertEquals(win,1);
 		
-		interfaceGame game2 = new Game();
+		Game game2 = new Game();
 		int win2 = 0;
 		game2.initilizateBoats(kb1);
 		do {
