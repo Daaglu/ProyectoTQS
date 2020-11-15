@@ -32,7 +32,9 @@ public class Player{
 		this.m_numBoats = numBoats;
 	}
 	
-	
+	public void boatDied() {
+		this.m_numBoats--;
+	}
 	
 	
 	public void createBoats(){
