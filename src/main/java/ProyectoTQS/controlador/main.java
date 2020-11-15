@@ -7,8 +7,10 @@ public class main{
 		game.initilizateBoats(kb);
 		boolean hit = false;
 		while(game.checkWin()==0) {
+			System.out.println("Turn player " + game.getTurn()+1);
 			game.doAttack(kb);
 			game.changeTurn();
+			System.out.println("Turn changed. Time to player " + game.getTurn()+1);
 		}
 	}
 }

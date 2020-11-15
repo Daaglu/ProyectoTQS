@@ -11,19 +11,19 @@ import ProyectoTQS.controlador.interfaceKeyboard;
 public class Player{
 	// Private attributes
 	private int m_numBoats; // 10
-	private List<Boat> m_listBoats;
+	private List<interfaceBoat> m_listBoats;
 	
 	// Constructor
 	public Player() {
 		this.m_numBoats = 0;
-		this.m_listBoats = new LinkedList<Boat>();
+		this.m_listBoats = new LinkedList<interfaceBoat>();
 	}
 	
 	public int getNumBoats() {
 		return this.m_numBoats;
 	}
 	
-	public List<Boat> getBoatList(){
+	public List<interfaceBoat> getBoatList(){
 		return this.m_listBoats;
 	}
 	
@@ -32,9 +32,7 @@ public class Player{
 		this.m_numBoats = numBoats;
 	}
 	
-	public void boatDied() {
-		this.m_numBoats--;
-	}
+	
 	
 	
 	public void createBoats(){

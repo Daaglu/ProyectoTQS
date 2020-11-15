@@ -3,6 +3,7 @@ package ProyectoTQS.controlador;
 import ProyectoTQS.model.Board;
 import ProyectoTQS.model.Player;
 import ProyectoTQS.model.interfaceBoard;
+import ProyectoTQS.model.interfaceBoat;
 import ProyectoTQS.model.Boat;
 import ProyectoTQS.model.Box;
 import ProyectoTQS.vista.showGame;
@@ -82,7 +83,7 @@ public class Game implements interfaceGame{
 	// con un for y asi poder tratar las excepciones
 	public void initilizateBoats(interfaceKeyboard kb) {
 		showGame sgame = new showGame();
-		for (Boat boat : m_p1.getBoatList()) {
+		for (interfaceBoat boat : m_p1.getBoatList()) {
 			boolean positioned = false;
 			while (!positioned) {
 				int[] res = m_p1.enterPositionBoats(boat.getSize(), kb); //row, col, orientation
@@ -98,7 +99,7 @@ public class Game implements interfaceGame{
 			}
 		}
 		
-		for (Boat boat : m_p2.getBoatList()) {
+		for (interfaceBoat boat : m_p2.getBoatList()) {
 			boolean positioned = false;
 			while (!positioned) {
 				int[] res = m_p2.enterPositionBoats(boat.getSize(), kb); //row, col, orientation

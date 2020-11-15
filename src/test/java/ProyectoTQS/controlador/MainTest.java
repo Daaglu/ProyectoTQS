@@ -307,8 +307,10 @@ public class MainTest {
 		int win = 0;
 		game.initilizateBoats(kb);
 		do {
+			System.out.println("Turn player " + game.getTurn()+1);
 			win = game.doAttack(kb);
 			game.changeTurn();
+			System.out.println("Turn changed. Time to player " + game.getTurn()+1);
 		} while(win==0);
 		assertEquals(win,1);
 		

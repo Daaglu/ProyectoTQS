@@ -70,8 +70,14 @@ public class PlayerTest {
 		Player p1 = new Player();
 		assertArrayEquals(p1.attack(kbAtt),new int[] {0,0});
 		assertArrayEquals(p1.attack(kbAtt),new int[] {9,9});
-		
-		
+	}
+	
+	@Test
+	public void livesTest() {
+		Player p1 = new Player();
+		p1.setNumBoats(1);
+		p1.boatDied();
+		assertEquals(0,p1.getNumBoats());
 	}
 	
 }
