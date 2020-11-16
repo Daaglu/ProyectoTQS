@@ -6,11 +6,12 @@ public class main{
 		interfaceKeyboard kb = new keyboard();
 		game.initilizateBoats(kb);
 		boolean hit = false;
-		while(game.checkWin()==0) {
+		int win = 0;
+		do {
 			System.out.println("Turn player " + game.getTurn()+1);
-			game.doAttack(kb);
+			win = game.doAttack(kb);
 			game.changeTurn();
 			System.out.println("Turn changed. Time to player " + game.getTurn()+1);
-		}
+		} while(win==0);
 	}
 }

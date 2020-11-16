@@ -1075,7 +1075,7 @@ public class GameTest {
 		assertEquals(game.getTurn(), 0);
 	}
 	
-	@Test // Test de caixa blanca amb statement coverage i decision coverage.
+	@Test // Test de caixa blanca amb statement coverage i decision coverage. i amb mockObjects.
 	public void initializateBoatsTest() { 
 		Game game = new Game();
 		game.initilizateBoats(kb);
@@ -1096,7 +1096,7 @@ public class GameTest {
 		
 	}
 	
-	@Test // Test caixa blanca amb statement coverage i decision coverage.
+	@Test // Test caixa blanca amb statement coverage i decision coverage i amb mockObjects.
 	public void doAttackTest() {
 		Game game = new Game();
 		game.initilizateBoats(kb0);
@@ -1113,7 +1113,7 @@ public class GameTest {
 		assertEquals(game.doAttack(kb1), -1);	
 	}
 	
-	@Test // Loop testing
+	@Test // Loop testing amb mockObjects
 	public void doAttackLoopTesting() {
 		// Falla abans d'entrar
 		Game game = new Game();

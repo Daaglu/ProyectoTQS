@@ -26,6 +26,20 @@ public class PlayerTest {
 		kbAtt.addValue(0);
 		kbAtt.addValue(9);
 		kbAtt.addValue(9);
+		kbAtt.addValue(10);
+		kbAtt.addValue(10);
+		kbAtt.addValue(1);
+		kbAtt.addValue(-1);
+		kbAtt.addValue(10);
+		kbAtt.addValue(10);
+		kbAtt.addValue(-1);
+		kbAtt.addValue(-1);
+		kbAtt.addValue(10);
+		kbAtt.addValue(8);
+		kbAtt.addValue(8);
+		kbAtt.addValue(10);
+		kbAtt.addValue(3);
+		kbAtt.addValue(3);
 	}
 
 	@Test // Test del constructor.
@@ -66,6 +80,7 @@ public class PlayerTest {
 		Player p1 = new Player();
 		assertArrayEquals(p1.attack(kbAtt),new int[] {0,0});
 		assertArrayEquals(p1.attack(kbAtt),new int[] {9,9});
+		assertArrayEquals(p1.attack(kbAtt),new int[] {3,3});
 	}
 	
 	@Test // Test de caixa blanca amb statement coverage i decision coverage i un mockobject.
