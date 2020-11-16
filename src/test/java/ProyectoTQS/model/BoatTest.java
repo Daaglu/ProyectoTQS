@@ -24,7 +24,6 @@ public class BoatTest {
 	}
 	
 	@Test // Test de caixa negra amb particions equivalents. 
-	//Test de caixa blanca amb statement coverage i decision coverage.
 	public void changeStateTest() {
 		Boat boat = new Boat(4, 0);
 		boat.changeState(-1);

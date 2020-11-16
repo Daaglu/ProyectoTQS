@@ -83,7 +83,7 @@ public class PlayerTest {
 		assertArrayEquals(p1.attack(kbAtt),new int[] {3,3});
 	}
 	
-	@Test // Test de caixa blanca amb statement coverage i decision coverage i un mockobject.
+	@Test // Test de caixa blanca amb statement coverage i un mockobject.
 	// Test de caixa negra amb particions equivalents.
 	public void livesTest() {
 		interfacePlayer p1 = new mockPlayer(0);
