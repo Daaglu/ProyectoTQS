@@ -26,13 +26,20 @@ public class BoatTest {
 	@Test // Test de caixa negra amb particions equivalents. 
 	public void changeStateTest() {
 		Boat boat = new Boat(4, 0);
+		// Valor limit
 		boat.changeState(-1);
 		assertEquals(boat.getState(), 0);
+		// Valor frontera
+		boat.changeState(0);
+		assertEquals(boat.getState(), 0);
+		// Valor limit
 		boat.changeState(1);
 		assertEquals(boat.getState(), 1);
-		boat.changeState(4);
-		assertEquals(boat.getState(), 1);
+		// Valor frontera
 		boat.changeState(2);
+		assertEquals(boat.getState(), 2);
+		// Valor limit
+		boat.changeState(4);
 		assertEquals(boat.getState(), 2);
 	}
 	

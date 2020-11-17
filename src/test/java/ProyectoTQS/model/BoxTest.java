@@ -40,5 +40,4 @@ public class BoxTest {
 		assertTrue(b2.getAttacked());
 		assertFalse(b2.setAttacked());
 	}
-	
 }
