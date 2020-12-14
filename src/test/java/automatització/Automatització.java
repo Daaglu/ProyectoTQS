@@ -312,7 +312,7 @@ public class Automatització {
 		assertEquals(game.checkWin(), 2);
 	}
 	
-	//@Test
+	@Test
 	//Automatització on 
 	public void automatització3() {
 		//Inicialitzem el taulell al joc
@@ -321,13 +321,69 @@ public class Automatització {
 		interfaceKeyboard kb3 = new mockKeyboard();
 		
 		for (int i=2;i<10;i++) {
-			for (int j=0;j<10;i++) {
-				kb3.addValue(i);
-				kb3.addValue(j);
-				game.doAttack(kb3);
-				game.changeTurn();
+			for (int j=0;j<10;j++) {
+				for(int t=0; t<2;t++) {
+					kb3.addValue(i);
+					kb3.addValue(j);
+					game.doAttack(kb3);
+					game.changeTurn();
+				}
+				
 			}
 		}
+		//Jugador 01 encerta tots els vaixells
+		kb3.addValue(0);
+		kb3.addValue(0);
+		
+		kb3.addValue(0);
+		kb3.addValue(1);
+		
+		kb3.addValue(0);
+		kb3.addValue(2);
+		
+		kb3.addValue(0);
+		kb3.addValue(3);
+		
+		kb3.addValue(0);
+		kb3.addValue(4);
+		kb3.addValue(0);
+		kb3.addValue(5);
+		
+		kb3.addValue(0);
+		kb3.addValue(6);
+		kb3.addValue(0);
+		kb3.addValue(7);
+		
+		kb3.addValue(0);
+		kb3.addValue(8);
+		kb3.addValue(0);
+		kb3.addValue(9);
+		
+		kb3.addValue(1);
+		kb3.addValue(0);
+		kb3.addValue(1);
+		kb3.addValue(1);
+		kb3.addValue(1);
+		kb3.addValue(2);
+		
+		kb3.addValue(1);
+		kb3.addValue(3);
+		kb3.addValue(1);
+		kb3.addValue(4);
+		kb3.addValue(1);
+		kb3.addValue(5);
+		
+		kb3.addValue(1);
+		kb3.addValue(6);
+		kb3.addValue(1);
+		kb3.addValue(7);
+		kb3.addValue(1);
+		kb3.addValue(8);
+		kb3.addValue(1);
+		kb3.addValue(9);
+		
+		game.doAttack(kb3);
+		assertEquals(game.checkWin(), 1);
 	}
 	
 	//@Test
