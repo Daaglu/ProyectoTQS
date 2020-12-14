@@ -8,5 +8,5 @@ public class keyboard implements interfaceKeyboard{
 		return in.nextInt();
 	}
 	
-	public void addValue(Integer val) {};
+	public void addValue(Integer val) {}
 }
